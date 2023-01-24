@@ -5,18 +5,11 @@ const {
   GET_ACTIVE_BADGE,
 } = require("../Models/queries/badges/badges");
 
-const { leetcode_endpoint } = require("../endpoint/endpoints");
-
 const router = express.Router();
 
-router.get("/badges", (res, req) => leetcode_endpoint(req, GET_ALL_BADGES));
+router.post("/badges", GET_ALL_BADGES);
 
-router.get("/currentChallengeBadge", (res, req) =>
-  leetcode_endpoint(req, GET_CURRENT_CHALLENGE_BADGE)
-);
-
-router.get(`/activeBadge`, (res, req) =>
-  leetcode_endpoint(req, GET_ACTIVE_BADGE)
-);
+router.post("/activeBadge", GET_ACTIVE_BADGE);
+router.post("/currentChallengeBadge", GET_CURRENT_CHALLENGE_BADGE);
 
 module.exports = router;
