@@ -1,6 +1,7 @@
-const { username } = require("../../username");
-
-exports.GET_USER_STATS = `
+const { leetcode_endpoint } = require("../../../endpoint/endpoints");
+exports.GET_USER_STATS = (req, res, next) => {
+  const { username } = req.body;
+  const usersQuery = `
 query  {
     allQuestionsCount {
       difficulty
@@ -23,8 +24,18 @@ query  {
     }
   }
 `;
+  try {
+    leetcode_endpoint(usersQuery).then((response) => {
+      return res.send(JSON.stringify(response.data));
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-exports.GET_USER_PROFILE_CALENDAR = `
+exports.GET_USER_PROFILE_CALENDAR = (req, res, next) => {
+  const { username } = req.body;
+  const usersQuery = `
 query {
     matchedUser(username: "${username}") {
       userCalendar(year:2023) {
@@ -44,41 +55,58 @@ query {
   }
       
 `;
-
-exports.GET_USER_PUBLIC_PROFILE = `
-query {
-    matchedUser(username: "${username}") {
-      contestBadge {
-        name
-        expired
-        hoverText
-        icon
-      }
-      username
-      githubUrl
-      twitterUrl
-      linkedinUrl
-      profile {
-        ranking
-        userAvatar
-        realName
-        aboutMe
-        school
-        websites
-        countryName
-        company
-        jobTitle
-        skillTags
-        postViewCount
-        postViewCountDiff
-        reputation
-        reputationDiff
-        solutionCount
-        solutionCountDiff
-        categoryDiscussCount
-        categoryDiscussCountDiff
-      }
-    }
+  try {
+    leetcode_endpoint(usersQuery).then((response) => {
+      return res.send(JSON.stringify(response.data));
+    });
+  } catch (err) {
+    console.log(err);
   }
-      
-`;
+};
+
+exports.GET_USER_PUBLIC_PROFILE = (req, res, next) => {
+  const { username } = req.body;
+  const usersQuery = `
+  query {
+      matchedUser(username: "${username}") {
+        contestBadge {
+          name
+          expired
+          hoverText
+          icon
+        }
+        username
+        githubUrl
+        twitterUrl
+        linkedinUrl
+        profile {
+          ranking
+          userAvatar
+          realName
+          aboutMe
+          school
+          websites
+          countryName
+          company
+          jobTitle
+          skillTags
+          postViewCount
+          postViewCountDiff
+          reputation
+          reputationDiff
+          solutionCount
+          solutionCountDiff
+          categoryDiscussCount
+          categoryDiscussCountDiff
+        }
+      }
+    }    
+  `;
+  try {
+    leetcode_endpoint(usersQuery).then((response) => {
+      return res.send(JSON.stringify(response.data));
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
