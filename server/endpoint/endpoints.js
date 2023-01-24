@@ -1,10 +1,11 @@
-const request = require("request");
+const axios = require("axios");
 
-exports.leetcode_endpoint = (req, query) => {
-  return request(
-    `https://leetcode.com/graphql?query=${query}`,
-    function (error, response, body) {
-      req.send(body);
-    }
-  );
+exports.leetcode_endpoint = async (query) => {
+  const fetchRequest = await axios(
+    `https://leetcode.com/graphql?query=${query}`
+  ).then((response) => {
+    return response.data;
+  });
+
+  return fetchRequest;
 };
