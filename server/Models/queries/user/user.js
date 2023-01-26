@@ -36,24 +36,23 @@ query  {
 exports.GET_USER_PROFILE_CALENDAR = (req, res, next) => {
   const { username } = req.body;
   const usersQuery = `
-query {
-    matchedUser(username: "${username}") {
-      userCalendar(year:2023) {
-        activeYears
-        streak
-        totalActiveDays
-        dccBadges {
-          timestamp
-          badge {
-            name
-            icon
-          }
+query userProfileCalendar(, $year: Int) {
+  matchedUser(username:  "${username}") {
+    userCalendar(year: $year) {
+      activeYears
+      streak
+      totalActiveDays
+      dccBadges {
+        timestamp
+        badge {
+          name
+          icon
         }
-        submissionCalendar
       }
+      submissionCalendar
     }
   }
-      
+}      
 `;
   try {
     leetcode_endpoint(usersQuery).then((response) => {
