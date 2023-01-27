@@ -9,6 +9,7 @@
   & .left {
     position: relative;
     top: 10px;
+    padding-left: 20px;
     & .logo {
       width: 60px;
       height: 60px;
@@ -27,14 +28,14 @@
   }
 
   & .right {
-    padding: 20px;
+    padding: 0 20px;
     position: relative;
-    top: 10px;
+    top: 24px;
 
     & .searchbarContainer {
       display: flex;
       flex-direction: row;
-      padding: 0 10px;
+      padding: 0 20px;
       & .searchbar {
         width: 100%;
         height: 35px;
@@ -89,14 +90,28 @@
     }
 
     & .themeSwitcherIcon {
-      padding: 10px 25px;
       font-size: 1.2rem;
       cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--white-color);
+      padding: 0 8px;
+      position: relative;
+      bottom: 7.5px;
     }
 
     & .streakIcon {
-      padding: 10px 5px;
+      padding: 12px;
       color: var(--bright-red-color);
+      font-size: 1.2rem;
+
+      & .streakData {
+        color: var(--white-color);
+        position: relative;
+        bottom: 2px;
+        font-weight: normal;
+        padding-left: 2px;
+      }
     }
   }
 }
