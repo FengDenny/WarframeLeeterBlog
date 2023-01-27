@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap");
+
+$primary-font: "Signika", sans-serif;
+$primary-color: #121220;
+$dark-cyan-color: #0b95ab;
+$bright-red-color: #f55945;
+$white-color: #fffefb;
+$primary-color-opacity: rgba(23, 22, 37, 0.55);
+$space-between: "space-between";
+$space-around: "space-around";
+$btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$mobile-nav-bg: rgb(27 26 42);
+
+:root {
+  --primary-font: #{$primary-font};
+  --primary-color: #{$primary-color};
+  --white-color: #{$white-color};
+  --dark-cyan-color: #{$dark-cyan-color};
+  --primary-color-opacity: #{$primary-color-opacity};
+  --bright-red-color: #{$bright-red-color};
+  --j-c-space-between: #{$space-between};
+  --j-c-space-around: #{$space-around};
+  --btn-box-shadow: #{$btn-box-shadow};
+  --mobile-nav-bg: #{$mobile-nav-bg};
+}
+
+@mixin display-flex($column: false) {
+  display: flex;
+  flex-direction: row;
+  @if ($column) {
+    flex-direction: var(--f-d-column);
+  }
+}
+
+@mixin justify-content($space-between: false, $space-around: false) {
+  justify-content: center;
+  @if ($space-between) {
+    justify-content: var(--j-c-space-between);
+  } @else {
+    justify-content: var(--j-c-space-around);
+  }
+}
