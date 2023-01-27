@@ -23,6 +23,11 @@ $mobile-nav-bg: rgb(27 26 42);
   --btn-box-shadow: #{$btn-box-shadow};
   --mobile-nav-bg: #{$mobile-nav-bg};
 }
+// Theme Toggler
+[color-theme="light"] {
+  --primary-color: #{$white-color};
+  --white-color: #{$primary-color};
+}
 
 @mixin display-flex($column: false) {
   display: flex;
