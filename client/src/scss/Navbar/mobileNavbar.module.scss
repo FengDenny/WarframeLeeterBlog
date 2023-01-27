@@ -41,7 +41,8 @@
 
 .mobileNavContainer {
   position: absolute;
-  margin-top: 5vh;
+  left: 0;
+  margin-top: 7vh;
   width: 100%;
   visibility: hidden;
   height: 0;
@@ -50,6 +51,7 @@
   background: var(--mobile-nav-bg);
   transition: opacity 0.5s, visibility 0.5s, height 1.5s;
   box-shadow: var(--btn-box-shadow);
+
   &.open {
     opacity: 1;
     visibility: visible;
