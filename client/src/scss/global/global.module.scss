@@ -1,3 +1,5 @@
+@use "globalVariables.module.scss" as gv;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,8 +14,9 @@ body {
 
 body {
   position: relative;
-  background: var(--bg-color);
+  background: var(--primary-color);
   font-family: var(--primary-font);
+  color: var(--white-color);
 }
 
 a,
@@ -26,4 +29,49 @@ li {
   max-width: 1440px;
   margin: auto;
   padding: 15px;
+}
+
+// Active class
+
+.active {
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    border-bottom: solid 2px var(--dark-cyan-color);
+  }
+}
+
+// FONT
+.primaryFont {
+  font-family: var(--primary-font);
+}
+
+.primaryFontColor {
+  color: var(--primary-color);
+}
+
+.whiteFontColor {
+  color: var(--white-color);
+}
+
+// Flex Box
+
+.dFlexRow {
+  @include gv.display-flex($column: false);
+}
+
+.dFlexColumn {
+  @include gv.display-flex($column: true);
+}
+
+.spaceBetween {
+  @include gv.justify-content($space-between: true);
+}
+
+.spaceCenter {
+  @include gv.justify-content($space-between: false);
+}
+.spaceAround {
+  @include gv.justify-content($space-around: true);
 }
