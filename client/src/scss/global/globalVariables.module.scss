@@ -2,6 +2,7 @@
 
 $primary-font: "Signika", sans-serif;
 $primary-color: #121220;
+$primary-color-border: #121220;
 $dark-cyan-color: #0b95ab;
 $bright-red-color: #f55945;
 $white-color: #fffefb;
@@ -14,6 +15,7 @@ $mobile-nav-bg: rgb(27 26 42);
 :root {
   --primary-font: #{$primary-font};
   --primary-color: #{$primary-color};
+  --primary-color-border: #{$primary-color-border};
   --white-color: #{$white-color};
   --dark-cyan-color: #{$dark-cyan-color};
   --primary-color-opacity: #{$primary-color-opacity};
@@ -27,6 +29,7 @@ $mobile-nav-bg: rgb(27 26 42);
 [color-theme="light"] {
   --primary-color: #{$white-color};
   --white-color: #{$primary-color};
+  --mobile-nav-bg: #{$white-color};
 }
 
 @mixin display-flex($column: false) {
