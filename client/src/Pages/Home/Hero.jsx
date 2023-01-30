@@ -9,6 +9,11 @@ import { DailyQuestionRequest } from "../../View/queries/dailyChallenge/DailyCha
 
 import { lcWebURL } from "../../Controller/streak/endpoint";
 
+import Banner from "../../components/util/Banner/Banner";
+
+import { useRemoveDuplicatedSubmissions } from "../../View/queries/dailyChallenge/hooks/useRemoveDuplicates";
+import { useGetRecentSubmission } from "../../View/queries/dailyChallenge/hooks/useGetRecentSubmission";
+
 export default function Hero() {
   const { data } = DailyQuestionRequest();
 
@@ -16,7 +21,14 @@ export default function Hero() {
 
   const day = date && date.split("-").slice(-1);
 
-  console.log(lcWebURL(link));
+  const RecentSubmissions = () => {
+    const { data } = useGetRecentSubmission("warframeleeter");
+    const { submissions } = useRemoveDuplicatedSubmissions(data);
+
+    console.log(submissions);
+  };
+
+  RecentSubmissions();
 
   return (
     <HeroLayout
@@ -25,6 +37,7 @@ export default function Hero() {
       description={`Day ${day && day.toString()} of daily coding challenge`}
     >
       <Card styling={cardStyles.heroCard}>
+        <Banner title={`Completed`} />
         <div className={cardStyles.cardContainer}>
           <div className={cardStyles.header}>
             <h2 className={cardStyles.heading}>
