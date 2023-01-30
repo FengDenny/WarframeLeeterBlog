@@ -1,0 +1,83 @@
+.heroCard {
+  position: relative;
+  // right: 30px;
+  background: var(--white-color);
+  color: var(--primary-color);
+  width: 450px;
+  max-width: 500px;
+  height: 400px;
+  max-height: 450px;
+  box-shadow: var(--btn-box-shadow);
+  border-radius: 5px;
+}
+
+.cardContainer {
+  margin-top: 5%;
+}
+
+.header {
+  text-align: center;
+  & .heading {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  & .date {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--description-color);
+  }
+}
+
+.lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+
+  li {
+    padding: 10px 5px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+
+    a {
+      color: var(--dark-cyan-color);
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--primary-color-opacity);
+      }
+    }
+  }
+}
+
+.tag {
+  &::before {
+    content: "";
+    display: block;
+    border-top: 1px solid var(--primary-color-opacity);
+  }
+
+  .tags {
+    position: relative;
+    display: inline-block;
+    top: 30px;
+    left: 70px;
+    background: var(--primary-color);
+    padding: 2px 7px;
+    border-radius: 5px;
+    color: var(--white-color);
+    white-space: nowrap;
+    height: 32px;
+
+    h6 {
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: normal;
+      text-align: center;
+      top: 3px;
+    }
+  }
+}
