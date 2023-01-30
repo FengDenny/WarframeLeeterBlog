@@ -5,6 +5,10 @@ $primary-color: #121220;
 $primary-color-border: #121220;
 $dark-cyan-color: #0b95ab;
 $bright-red-color: #f55945;
+$description-color: #8290b0;
+$green: #1de46d;
+$red: #ec0b0b;
+$gold-yellow: #e2be3f;
 $white-color: #fffefb;
 $primary-color-opacity: rgba(23, 22, 37, 0.55);
 $space-between: "space-between";
@@ -16,6 +20,7 @@ $mobile-nav-bg: rgb(27 26 42);
   --primary-font: #{$primary-font};
   --primary-color: #{$primary-color};
   --primary-color-border: #{$primary-color-border};
+  --description-color: #{$description-color};
   --white-color: #{$white-color};
   --dark-cyan-color: #{$dark-cyan-color};
   --primary-color-opacity: #{$primary-color-opacity};
@@ -24,6 +29,10 @@ $mobile-nav-bg: rgb(27 26 42);
   --j-c-space-around: #{$space-around};
   --btn-box-shadow: #{$btn-box-shadow};
   --mobile-nav-bg: #{$mobile-nav-bg};
+  --green: #{$green};
+  --red: #{$red};
+  --gold-yellow: #{$gold-yellow};
+  --banner-header-color: #{$white-color};
 }
 // Theme Toggler
 [color-theme="light"] {
