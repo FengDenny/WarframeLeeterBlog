@@ -3,7 +3,7 @@ import ToggleMobileNav from "./ToggleMobileNav";
 import NavLogo from "../NavLeft/NavLogo";
 import ThemeToggler from "../NavRight/ThemeToggler";
 import StreakCount from "../NavRight/StreakCount";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import globalStyles from "../../../../scss/global/global.module.scss";
 
 export default function MobileNavbar({ toggle, show, close }) {

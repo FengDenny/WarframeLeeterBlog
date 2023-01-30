@@ -1,5 +1,5 @@
 import React from "react";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import globalStyles from "../../../../scss/global/global.module.scss";
 import NavLinks from "../NavLeft/NavLinks";
 import NavLogo from "../NavLeft/NavLogo";

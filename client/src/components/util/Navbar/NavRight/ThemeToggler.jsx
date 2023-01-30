@@ -1,5 +1,5 @@
 import React from "react";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import { FaSun } from "react-icons/fa";
 import { useLightTheme } from "../../../../View/utils/Navbar/useLightTheme";
 

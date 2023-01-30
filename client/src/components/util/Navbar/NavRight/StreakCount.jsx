@@ -1,5 +1,5 @@
 import React from "react";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import { FaFire } from "react-icons/fa";
 import { PublicProfile } from "../../../../View/utils/Navbar/profile/PublicProfile";
 

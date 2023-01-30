@@ -1,6 +1,6 @@
 import React from "react";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
-import mobileStyles from "../../../../scss/Navbar/mobileNavbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
+import mobileStyles from "../../../../scss/util/Navbar/mobileNavbar.module.scss";
 import { FaSearch } from "react-icons/fa";
 export default function Searchbar({ mobile }) {
   return (

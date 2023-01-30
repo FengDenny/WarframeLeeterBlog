@@ -1,8 +1,8 @@
 import React from "react";
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import globalStyles from "../../../../scss/global/global.module.scss";
 import { Link } from "react-router-dom";
-import mobileStyles from "../../../../scss/Navbar/mobileNavbar.module.scss";
+import mobileStyles from "../../../../scss/util/Navbar/mobileNavbar.module.scss";
 
 import { links } from "../../../../Model/Navbar/NavLinks";
 import ActiveNavLink from "../../../../View/utils/Navbar/ActiveNavLink";

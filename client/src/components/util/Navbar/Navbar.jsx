@@ -1,6 +1,6 @@
 import React from "react";
-import navbarStyles from "../../../scss/Navbar/navbar.module.scss";
-import globalStyles from "../../../scss/global/global.module.scss";
+import navbarStyles from "../../../scss/util/Navbar/navbar.module.scss";
+
 import DesktopNavbar from "./Desktop/DesktopNavbar";
 import MobileNavbar from "./Mobile/MobileNavbar";
 import { MobileMenuToggler } from "../../../View/utils/Navbar/NavbarView";

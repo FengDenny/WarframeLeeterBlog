@@ -1,4 +1,4 @@
-import navbarStyles from "../../../../scss/Navbar/navbar.module.scss";
+import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import { useSelector } from "react-redux";
 export default function NavLogo() {
   const { themeData } = useSelector((state) => ({ ...state }));

@@ -1,5 +1,5 @@
 import React from "react";
-import mobileStyles from "../../../../scss/Navbar/mobileNavbar.module.scss";
+import mobileStyles from "../../../../scss/util/Navbar/mobileNavbar.module.scss";
 import Searchbar from "../NavRight/Searchbar";
 import NavLinks from "../NavLeft/NavLinks";
 export default function MobileMenu({ show, close }) {
