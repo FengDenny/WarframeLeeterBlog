@@ -1,9 +1,8 @@
 import React from "react";
 import Banner from "../Banner/Banner";
-import {
-  useRemoveDuplicatedSubmissions,
-  CompletedChecker,
-} from "../../../View/queries/dailyChallenge/CompletedChecker";
+import { CompletedChecker } from "../../../View/queries/dailyChallenge/CompletedChecker";
+
+import { useRemoveDuplicatedSubmissions } from "../../../View/queries/dailyChallenge/hooks/useRemoveDuplicates";
 
 export default function Card({ styling, children }) {
   // console.log(submissions);
