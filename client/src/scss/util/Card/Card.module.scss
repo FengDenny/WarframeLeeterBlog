@@ -81,3 +81,49 @@
     }
   }
 }
+
+.solutionCard {
+  position: relative;
+  background: var(--white-color);
+  color: var(--primary-color);
+  width: 550px;
+  max-width: 700px;
+  height: 250px;
+  max-height: 450px;
+  box-shadow: var(--btn-box-shadow);
+  border-radius: 5px;
+  margin: 10px;
+
+  & .solutionCardContainer {
+    margin-top: 10px;
+    position: relative;
+    top: 20px;
+  }
+
+  & .solutionHeader {
+    position: relative;
+    top: 20px;
+  }
+
+  & .solutionCount {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    & .viewHeading,
+    & .voteHeading {
+      position: absolute;
+      left: 30%;
+      color: var(--description-color);
+      & span {
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+      font-weight: normal;
+    }
+
+    & .voteHeading {
+      left: 60%;
+    }
+  }
+}
