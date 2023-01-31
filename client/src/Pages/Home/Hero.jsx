@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeroLayout from "../../components/layouts/section/SectionLayout";
 import layoutStyles from "../../scss/Section/SectionLayout.module.scss";
 import cardStyles from "../../scss/util/Card/Card.module.scss";
@@ -11,8 +11,11 @@ import { lcWebURL } from "../../Controller/endpoint";
 
 import Banner from "../../components/util/Banner/Banner";
 
-import { useRemoveDuplicatedSubmissions } from "../../View/queries/dailyChallenge/hooks/useRemoveDuplicates";
-import { useGetRecentSubmission } from "../../View/queries/dailyChallenge/hooks/useGetRecentSubmission";
+import bannerStyle from "../../scss/util/Banner/Banner.module.scss";
+
+import { DeDupedRecentSubmissions } from "../../View/queries/dailyChallenge/hooks/useDedupedSubmissions";
+
+import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTopic";
 
 export default function Hero() {
   const { data } = DailyQuestionRequest();
@@ -21,14 +24,24 @@ export default function Hero() {
 
   const day = date && date.split("-").slice(-1);
 
-  const RecentSubmissions = () => {
-    const { data } = useGetRecentSubmission("warframeleeter");
-    const { submissions } = useRemoveDuplicatedSubmissions(data);
+  const { deDupedValues } = DeDupedRecentSubmissions();
 
-    console.log(submissions);
-  };
+  const isCompleted = deDupedValues.includes(question && question.title);
 
-  RecentSubmissions();
+  const { solutionsData } = threeRecentSolutionData();
+
+  console.log(solutionsData);
+
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    solutionsData &&
+      solutionsData.map((item) => {
+        return item.questionTitle.includes(question.title)
+          ? setUrl(item.url)
+          : null;
+      });
+  }, [url]);
 
   return (
     <HeroLayout
@@ -37,7 +50,10 @@ export default function Hero() {
       description={`Day ${day && day.toString()} of daily coding challenge`}
     >
       <Card styling={cardStyles.heroCard}>
-        <Banner title={`Completed`} />
+        <Banner
+          title={isCompleted ? `Completed` : `Not Completed`}
+          style={isCompleted ? bannerStyle.green : bannerStyle.red}
+        />
         <div className={cardStyles.cardContainer}>
           <div className={cardStyles.header}>
             <h2 className={cardStyles.heading}>
@@ -52,9 +68,14 @@ export default function Hero() {
                   Problem
                 </a>
               </li>
-              <li>
-                <Link to='/'>Solution</Link>
-              </li>
+
+              {url ? (
+                <li>
+                  <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
+                    Solution
+                  </a>
+                </li>
+              ) : null}
             </ul>
           </div>
 
