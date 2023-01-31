@@ -18,3 +18,17 @@ export const showThreeRecentSolution = () => {
 
   return { threeRecentSolutions };
 };
+
+export const threeRecentSolutionData = (checkTitle) => {
+  const { threeRecentSolutions } = showThreeRecentSolution();
+  const solutionsData =
+    threeRecentSolutions &&
+    threeRecentSolutions.map((item) => {
+      const { title, url, viewCount, questionTitle, id } = item.node;
+      const { voteCount } = item.node.post;
+
+      return { title, url, viewCount, questionTitle, id, voteCount };
+    });
+
+  return { solutionsData };
+};
