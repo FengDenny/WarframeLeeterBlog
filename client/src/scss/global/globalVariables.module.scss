@@ -4,6 +4,7 @@ $primary-font: "Signika", sans-serif;
 $primary-color: #121220;
 $primary-color-border: #121220;
 $dark-cyan-color: #0b95ab;
+$dark-cyan-hover-color: #0cacc5;
 $bright-red-color: #f55945;
 $description-color: #8290b0;
 $green: #1de46d;
@@ -13,7 +14,7 @@ $white-color: #fffefb;
 $primary-color-opacity: rgba(23, 22, 37, 0.55);
 $space-between: "space-between";
 $space-around: "space-around";
-$btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$btn-box-shadow: 0px 8px 15px rgb(16 16 16);
 $mobile-nav-bg: rgb(27 26 42);
 
 :root {
@@ -23,6 +24,7 @@ $mobile-nav-bg: rgb(27 26 42);
   --description-color: #{$description-color};
   --white-color: #{$white-color};
   --dark-cyan-color: #{$dark-cyan-color};
+  --dark-cyan-hover-color: #{$dark-cyan-hover-color};
   --primary-color-opacity: #{$primary-color-opacity};
   --bright-red-color: #{$bright-red-color};
   --j-c-space-between: #{$space-between};
