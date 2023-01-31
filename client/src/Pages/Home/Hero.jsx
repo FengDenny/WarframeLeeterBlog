@@ -41,7 +41,7 @@ export default function Hero() {
           ? setUrl(item.url)
           : null;
       });
-  }, [url]);
+  }, [solutionsData]);
 
   return (
     <HeroLayout
@@ -69,13 +69,13 @@ export default function Hero() {
                 </a>
               </li>
 
-              {url ? (
+              {url && (
                 <li>
                   <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
                     Solution
                   </a>
                 </li>
-              ) : null}
+              )}
             </ul>
           </div>
 
