@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import globalStyle from "../../scss/global/global.module.scss";
 import { DailyQuestionRequest } from "../../View/queries/dailyChallenge/DailyChallenge";
 
-import { lcWebURL } from "../../Controller/streak/endpoint";
+import { lcWebURL } from "../../Controller/endpoint";
 
 import Banner from "../../components/util/Banner/Banner";
 

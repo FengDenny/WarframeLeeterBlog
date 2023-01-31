@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { postEndpoint } from "../../../../Controller/streak/endpoint";
+import { postEndpoint } from "../../../../Controller/endpoint";
 
 export const useGetRecentSubmission = (userID) => {
   const [username, _] = useState(userID);

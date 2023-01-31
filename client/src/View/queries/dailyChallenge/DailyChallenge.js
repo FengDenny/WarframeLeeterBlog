@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getEndpoint } from "../../../Controller/streak/endpoint";
+import { getEndpoint } from "../../../Controller/endpoint";
 export const DailyQuestionRequest = () => {
   const [username, _] = useState("warframeleeter");
   const [data, setData] = useState("");
