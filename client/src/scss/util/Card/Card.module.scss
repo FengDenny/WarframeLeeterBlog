@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 
   li {
@@ -127,3 +127,51 @@
     }
   }
 }
+
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+$xsm-layout-breakpoint-max-width: 667px;
+@media (max-width: $layout-breakpoint-max-width) {
+  .heroCard {
+    width: 350px;
+
+    & .heading {
+      font-size: 1.2rem;
+    }
+    .tags {
+      left: 49px !important;
+    }
+  }
+
+  .solutionCard {
+    width: 350px;
+    margin: 0;
+
+    & .solutionCardContainer {
+      & .heading {
+        font-size: 1.2rem;
+      }
+
+      & .lists {
+        & li {
+          font-size: 1rem;
+        }
+      }
+
+      & .solutionCount {
+        position: relative;
+        right: 15px;
+      }
+    }
+  }
+}
+
+// @media (min-width: $layout-breakpoint-min-width) {
+//   .toggleBtn,
+//   .mobileNav {
+//     display: none;
+//   }
+//   .desktopNav {
+//     display: flex;
+//   }
+// }

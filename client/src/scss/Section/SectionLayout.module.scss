@@ -134,11 +134,46 @@ $xsm-layout-breakpoint-max-width: 667px;
     margin-top: 22vh;
     &::before,
     &::after {
-      top: 80vh;
+      top: 65vh;
+    }
+
+    .header {
+      left: 0px;
+      & .heading {
+        font-size: 2rem;
+      }
     }
   }
 
   .solutionSection {
     flex-direction: column;
+
+    & .header {
+      left: 0;
+
+      & .heading {
+        font-size: 2rem;
+      }
+
+      & .innerHtml {
+        width: 339px;
+      }
+
+      & .spanDescription {
+        color: var(--dark-cyan-color);
+
+        &::after {
+          width: 18%;
+          left: 28.3%;
+          top: 48%;
+        }
+        &::before {
+          width: 19%;
+          left: 28%;
+          top: 68px;
+          height: 45px;
+        }
+      }
+    }
   }
 }
