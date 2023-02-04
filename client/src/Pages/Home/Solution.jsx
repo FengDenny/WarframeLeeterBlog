@@ -60,9 +60,9 @@ export default function Solution() {
       description={
         <Fragment>
           For all problems solved, each solution had been explained thoroughly,
-          and solved with{" "}
+          solved with
           <span className={layoutStyles.spanDescription}> Python</span> and
-          often times with whiteboard walkthrough’s .
+          showing their efficiency analysis.
         </Fragment>
       }
       button={
