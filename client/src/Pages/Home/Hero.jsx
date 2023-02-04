@@ -78,14 +78,14 @@ export default function Hero() {
 
           <div className={cardStyles.tag}>
             <div className={globalStyle.gridContainer2}>
-              {question &&
-                question.topicTags.map((tags) => (
-                  <>
+              <div className={cardStyles.tagContainer}>
+                {question &&
+                  question.topicTags.map((tags) => (
                     <div className={cardStyles.tags} key={tags.id}>
                       <h6>{tags.name}</h6>
                     </div>
-                  </>
-                ))}
+                  ))}
+              </div>
             </div>
           </div>
         </div>

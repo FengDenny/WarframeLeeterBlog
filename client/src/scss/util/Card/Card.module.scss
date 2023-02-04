@@ -54,6 +54,11 @@
 }
 
 .tag {
+  & .tagContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
   &::before {
     content: "";
     display: block;
@@ -62,15 +67,14 @@
 
   .tags {
     position: relative;
-    display: inline-block;
     top: 30px;
-    left: 70px;
     background: var(--primary-color);
     padding: 2px 7px;
     border-radius: 5px;
     color: var(--white-color);
     white-space: nowrap;
     height: 32px;
+    margin: 0 5px;
 
     h6 {
       position: relative;
@@ -138,8 +142,17 @@ $xsm-layout-breakpoint-max-width: 667px;
     & .heading {
       font-size: 1.2rem;
     }
+
     .tags {
       left: 49px !important;
+      margin: 2px 5px;
+    }
+
+    & .tagContainer {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      margin: 0 15%;
     }
   }
 
@@ -165,13 +178,3 @@ $xsm-layout-breakpoint-max-width: 667px;
     }
   }
 }
-
-// @media (min-width: $layout-breakpoint-min-width) {
-//   .toggleBtn,
-//   .mobileNav {
-//     display: none;
-//   }
-//   .desktopNav {
-//     display: flex;
-//   }
-// }
