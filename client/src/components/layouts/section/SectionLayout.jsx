@@ -15,15 +15,17 @@ export default function SectionLayout({
       <div className={globalStyle.container}>
         <div className={`${layoutStyles.header}`}>
           <h2 className={layoutStyles.heading}>{title}</h2>
-          <h4
-            className={`${
-              innerHtmlDescription
-                ? layoutStyles.innerHtml
-                : layoutStyles.description
-            }`}
-          >
-            {description}
-          </h4>
+          {description && (
+            <h4
+              className={`${
+                innerHtmlDescription
+                  ? layoutStyles.innerHtml
+                  : layoutStyles.description
+              }`}
+            >
+              {description}
+            </h4>
+          )}
           {button && button}
         </div>
       </div>
