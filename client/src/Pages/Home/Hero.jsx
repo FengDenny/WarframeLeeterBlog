@@ -3,7 +3,6 @@ import HeroLayout from "../../components/layouts/section/SectionLayout";
 import layoutStyles from "../../scss/Section/SectionLayout.module.scss";
 import cardStyles from "../../scss/util/Card/Card.module.scss";
 import Card from "../../components/util/Card/Card";
-import { Link } from "react-router-dom";
 import globalStyle from "../../scss/global/global.module.scss";
 import { DailyQuestionRequest } from "../../View/queries/dailyChallenge/DailyChallenge";
 
@@ -29,8 +28,6 @@ export default function Hero() {
   const isCompleted = deDupedValues.includes(question && question.title);
 
   const { solutionsData } = threeRecentSolutionData();
-
-  console.log(solutionsData);
 
   const [url, setUrl] = useState("");
 
