@@ -30,7 +30,7 @@
         content: "";
         width: 11%;
         position: absolute;
-        left: 21.3%;
+        left: 15.5%;
         top: 48%;
         height: 56px;
         display: block;
@@ -40,9 +40,9 @@
       }
       &::before {
         content: "";
-        width: 76%;
+        width: 63%;
         position: absolute;
-        left: 21%;
+        left: 16%;
         top: 35px;
         height: 50px;
         display: block;
@@ -111,7 +111,7 @@
     background: var(--dark-cyan-color);
     border: 1px solid var(--dark-cyan-color);
     border-radius: 5px;
-    color: var(--white);
+    color: var(--white-color-fixed);
     width: 120px;
     height: 30px;
     font-weight: bold;
@@ -125,7 +125,56 @@
   }
 }
 
-$layout-breakpoint-max-width: 997px;
+.dailysSolvedSection {
+  position: relative;
+  align-items: center;
+  background: var(--white-color);
+  color: var(--primary-color);
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  top: 690px;
+  box-shadow: var(--btn-box-shadow);
+
+  & .heading {
+    position: absolute;
+    right: 30px !important;
+    top: 200px;
+  }
+
+  .cardContainer {
+    position: absolute;
+    top: 50%;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    left: 0;
+
+    & .card {
+      & h2 {
+        color: var(--white-color);
+        font-size: 1.2rem;
+      }
+
+      & p {
+        color: var(--description-color);
+        padding-top: 15px;
+      }
+      background: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+      width: 90%;
+      max-width: 100%;
+      height: auto;
+      padding: 10px;
+      text-align: center;
+      white-space: no-wrap;
+      box-shadow: var(--card-box-shadow);
+    }
+  }
+}
+
+$layout-breakpoint-max-width: 1080px;
 $layout-breakpoint-min-width: 998px;
 $xsm-layout-breakpoint-max-width: 667px;
 @media (max-width: $layout-breakpoint-max-width) {
@@ -164,16 +213,55 @@ $xsm-layout-breakpoint-max-width: 667px;
 
         &::after {
           width: 18%;
-          left: 28.3%;
+          left: 11.3%;
           top: 48%;
         }
         &::before {
           width: 19%;
-          left: 28%;
-          top: 68px;
+          left: 11%;
+          top: 70px;
           height: 45px;
         }
       }
+    }
+
+    & .button {
+      width: 50%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .cardContainer {
+    position: absolute;
+    top: 50%;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    left: 0;
+
+    & .card {
+      & h2 {
+        color: var(--white-color);
+        font-size: 1.2rem;
+      }
+
+      & p {
+        color: var(--description-color);
+        padding-top: 15px;
+      }
+      background: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      border-radius: 5px;
+      width: 90%;
+      max-width: 100%;
+      height: auto;
+      padding: 10px;
+      text-align: center;
+      white-space: no-wrap;
+      box-shadow: var(--card-box-shadow);
     }
   }
 }
