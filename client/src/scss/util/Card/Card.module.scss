@@ -47,7 +47,7 @@
 
       &:hover {
         text-decoration: underline;
-        color: var(--primary-color-opacity);
+        color: var(--dark-cyan-hover-color);
       }
     }
   }
@@ -57,7 +57,7 @@
   &::before {
     content: "";
     display: block;
-    border-top: 1px solid var(--primary-color-opacity);
+    border-top: 1px solid var(--hr-color);
   }
 
   .tags {
@@ -144,7 +144,7 @@ $xsm-layout-breakpoint-max-width: 667px;
   }
 
   .solutionCard {
-    width: 350px;
+    width: 370px;
     margin: 0;
 
     & .solutionCardContainer {
