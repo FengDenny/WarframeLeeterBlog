@@ -24,7 +24,6 @@ export const dailysRecordMatchedByTitle = () => {
     dailysQuestionRecord &&
     dailysQuestionRecord.reduce((acc, record) => {
       // retrieve objects from the dailysQuestionRecord array that match
-      console.log(record);
       const matches =
         solutionTopic &&
         solutionTopic.find(
