@@ -11,7 +11,7 @@ import cardStyles from "../../scss/util/Card/Card.module.scss";
 export default function DailysSolved() {
   const { search } = dailysRecordMatchedByTitle();
 
-  // console.log(search);
+  console.log(search);
 
   return (
     <SolutionLayout
@@ -21,37 +21,42 @@ export default function DailysSolved() {
       <div className={dailysStyles.cardContainer}>
         <div className={globalStyle.gridContainer3}>
           {search &&
-            search.map((item) => {
-              console.log(item);
-              return (
-                item.matches.node && (
-                  <Card styling={dailysStyles.card} key={item.matches.node.id}>
-                    <h2>{item.matches.node.questionTitle}</h2>
-                    <p>{item.date}</p>
-                    <ul className={cardStyles.lists}>
-                      <li>
-                        <a
-                          href={lcWebURL(item.link)}
-                          target='_blank'
-                          rel='noreferrer'
-                        >
-                          Problem
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href={lcWebURL(item.matches.node.url)}
-                          target='_blank'
-                          rel='noreferrer'
-                        >
-                          Solution
-                        </a>
-                      </li>
-                    </ul>
-                  </Card>
-                )
-              );
-            })}
+            search
+              .map((item) => {
+                return (
+                  item.matches.node && (
+                    <Card
+                      styling={dailysStyles.card}
+                      key={item.matches.node.id}
+                    >
+                      <h2>{item.matches.node.questionTitle}</h2>
+                      <p>{item.date}</p>
+                      <ul className={cardStyles.lists}>
+                        <li>
+                          <a
+                            href={lcWebURL(item.link)}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            Problem
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href={lcWebURL(item.matches.node.url)}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            Solution
+                          </a>
+                        </li>
+                      </ul>
+                    </Card>
+                  )
+                );
+              })
+              .reverse()
+              .slice(0, 6)}
         </div>
       </div>
     </SolutionLayout>
