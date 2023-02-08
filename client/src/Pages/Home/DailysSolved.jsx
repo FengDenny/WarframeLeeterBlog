@@ -11,8 +11,6 @@ import cardStyles from "../../scss/util/Card/Card.module.scss";
 export default function DailysSolved() {
   const { search } = dailysRecordMatchedByTitle();
 
-  console.log(search);
-
   return (
     <SolutionLayout
       style={dailysStyles.dailysSolvedSection}
