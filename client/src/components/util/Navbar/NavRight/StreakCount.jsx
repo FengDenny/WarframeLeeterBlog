@@ -1,10 +1,11 @@
 import React from "react";
 import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import { FaFire } from "react-icons/fa";
-import { PublicProfile } from "../../../../View/utils/Navbar/profile/PublicProfile";
+
+import { POSTQueries } from "../../../../View/queries/QueriesTemplate";
 
 export default function StreakCount() {
-  const { data } = PublicProfile();
+  const { data } = POSTQueries("userProfileCalendar", "warframeleeter");
 
   return (
     <>
