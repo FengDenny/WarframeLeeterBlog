@@ -1,10 +1,12 @@
 import { DailyQuestionRecords } from "../../../View/queries/dailyChallenge/DailyChallenge";
 
-import { SolutionTopic } from "../../../View/queries/solution/SolutionTopic";
+import { POSTQueries } from "../../../View/queries/QueriesTemplate";
 
 export const solutionTopicData = () => {
-  const { data } = SolutionTopic();
-  const solutionTopic = data && data.map((item) => item);
+  const { data } = POSTQueries("solutionTopic", "warframeleeter");
+  const solutionTopic =
+    data.userSolutionTopics &&
+    data.userSolutionTopics.edges.map((item) => item);
 
   return { solutionTopic };
 };
