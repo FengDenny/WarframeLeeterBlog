@@ -1,16 +1,5 @@
 import { useState, useEffect } from "react";
-import { getEndpoint, postEndpoint } from "../../../Controller/endpoint";
-export const DailyQuestionRequest = () => {
-  const [username, _] = useState("warframeleeter");
-  const [data, setData] = useState("");
-  useEffect(() => {
-    const data = { username };
-    getEndpoint("dailyQuestion", data).then((items) =>
-      setData(items.data.activeDailyCodingChallengeQuestion)
-    );
-  }, [username]);
-  return { data };
-};
+import { postEndpoint } from "../../../Controller/endpoint";
 
 export const DailyQuestionRecords = () => {
   const [JSONData, _] = useState({
