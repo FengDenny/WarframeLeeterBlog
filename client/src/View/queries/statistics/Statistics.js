@@ -1,7 +1,7 @@
-import { Queries } from "../../../View/queries/QueriesTemplate";
+import { POSTQueries } from "../../../View/queries/QueriesTemplate";
 
 export const LanguageStats = () => {
-  const { data } = Queries("languageStats", "warframeleeter");
+  const { data } = POSTQueries("languageStats", "warframeleeter");
 
   const languageData =
     data.matchedUser && data.matchedUser.languageProblemCount;
@@ -10,7 +10,7 @@ export const LanguageStats = () => {
 };
 
 export const ProblemSolved = () => {
-  const { data } = Queries("problemSolvedRating", "warframeLeeter");
+  const { data } = POSTQueries("problemSolvedRating", "warframeLeeter");
 
   const allQsCount = data.allQuestionsCount && data.allQuestionsCount;
 
@@ -21,7 +21,7 @@ export const ProblemSolved = () => {
 };
 
 export const TopicStats = () => {
-  const { data } = Queries("skillStats", "warframeleeter");
+  const { data } = POSTQueries("skillStats", "warframeleeter");
 
   const advanceTopic =
     data.matchedUser && data.matchedUser.tagProblemCounts.advanced;
