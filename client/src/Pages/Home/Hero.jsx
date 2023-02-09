@@ -16,10 +16,13 @@ import { DeDupedRecentSubmissions } from "../../View/queries/dailyChallenge/hook
 
 import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTopic";
 
-export default function Hero() {
-  const { data } = DailyQuestionRequest();
+import { GETQueries } from "../../View/queries/QueriesTemplate";
 
-  const { date, link, question } = data;
+export default function Hero() {
+  const { data } = GETQueries("dailyQuestion", "warframeleeter");
+
+  const { date, link, question } =
+    data && data.activeDailyCodingChallengeQuestion;
 
   const day = date && date.split("-").slice(-1);
 
