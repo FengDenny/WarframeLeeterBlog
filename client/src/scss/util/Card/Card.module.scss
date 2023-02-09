@@ -5,7 +5,7 @@
   color: var(--primary-color);
   width: 450px;
   max-width: 500px;
-  height: 400px;
+  height: 500px;
   max-height: 450px;
   box-shadow: var(--btn-box-shadow);
   border-radius: 5px;
@@ -90,7 +90,7 @@
   position: relative;
   background: var(--white-color);
   color: var(--primary-color);
-  width: 550px;
+  width: 440px;
   max-width: 700px;
   height: 250px;
   max-height: 450px;
@@ -157,7 +157,7 @@ $xsm-layout-breakpoint-max-width: 667px;
   }
 
   .solutionCard {
-    width: 370px;
+    width: 353px;
     margin: 0;
 
     & .solutionCardContainer {
