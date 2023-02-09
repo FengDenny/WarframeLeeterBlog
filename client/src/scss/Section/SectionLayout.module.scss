@@ -127,7 +127,6 @@
 
 .dailysSolvedSection {
   position: relative;
-  align-items: center;
   background: var(--white-color);
   color: var(--primary-color);
   width: 100%;
@@ -177,30 +176,298 @@
 .statsSection {
   position: relative;
   align-items: center;
-  // background: var(--white-color);
   color: var(--white-color);
   width: 100%;
   height: 100vh;
   max-height: 100vh;
   top: 690px;
 
-  & .heading {
+  & .header {
+    display: flex;
+    flex-direction: column;
+    & .heading {
+      position: relative;
+      top: 50px;
+      text-align: center;
+    }
+    h4 {
+      position: relative;
+      top: 50px;
+      text-align: center;
+    }
+  }
+
+  & .cardContainer {
     position: relative;
-    top: 50px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    & .langCardContainer {
+      width: 250px;
+      background: var(--white-color);
+      height: 250px;
+      margin: 150px 1%;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: var(--card-box-shadow);
+
+      & .langInnerContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .langTitle {
+          display: flex;
+          position: relative;
+          left: 20px;
+          h2 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            padding: 50px 60px 0 0;
+          }
+        }
+        & .langHeader {
+          position: relative;
+          right: 65px;
+          top: 20px;
+          & .langHeading {
+            color: var(--primary-color);
+            & .langHeaderFour {
+              padding: 15px 0;
+              font-size: 1rem;
+              color: var(--description-color);
+              font-weight: normal;
+
+              & .langJS,
+              .langPY {
+                position: relative;
+                top: 2x;
+                color: var(--gold-yellow);
+                padding: 0 3px;
+              }
+
+              & .langPY {
+                color: #306998;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 220px;
+                height: 2px;
+                border-bottom: 2px solid var(--hr-color);
+              }
+            }
+
+            & .solvedJSContainer {
+              position: relative;
+              & .solvedJS {
+                position: absolute;
+                bottom: 16px;
+                left: 150px;
+              }
+            }
+
+            & .solvedPYContainer {
+              position: relative;
+              & .solvedPY {
+                position: absolute;
+                bottom: 15px;
+                left: 150px;
+              }
+            }
+          }
+        }
+
+        &::after {
+          content: "";
+          position: relative;
+          bottom: 93px;
+          right: 2px;
+          display: block;
+          width: 220px;
+          height: 2px;
+          border-bottom: 2px solid var(--hr-color);
+        }
+      }
+    }
+
+    & .allProblemsContainer {
+      position: relative;
+      width: 450px;
+      background: var(--white-color);
+      height: 250px;
+      margin: 150px 0%;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: var(--card-box-shadow);
+
+      & .problemsTitle {
+        display: flex;
+        justify-content: center;
+
+        h2 {
+          color: var(--primary-color);
+          font-size: 1rem;
+          padding: 0 65px 0 5px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 370px;
+          height: 30px;
+          border-bottom: 2px solid var(--hr-color);
+        }
+      }
+
+      & .problemsHeader {
+        & .problemsHeading {
+          padding: 15px 46px;
+          position: relative;
+
+          & .totalContainer {
+            position: relative;
+            & .totalHeaderFour {
+              text-align: end;
+              color: var(--primary-color);
+              position: absolute;
+              right: 50px;
+              bottom: 20px;
+              font-weight: normal;
+            }
+          }
+
+          & .difficultyHeaderFour {
+            position: relative;
+            color: var(--description-color);
+            font-weight: normal;
+            padding: 14px 0;
+            bottom: 3px;
+
+            &::after {
+              content: "";
+              position: absolute;
+              display: block;
+              width: 370px;
+              height: 2px;
+              left: -15px;
+              border-bottom: 2px solid var(--hr-color);
+            }
+          }
+        }
+      }
+
+      & .countHeader {
+        position: relative;
+
+        & .countHeading {
+          position: absolute;
+          bottom: 20px;
+          left: 187px;
+          color: var(--primary-color);
+
+          & .countHeaderFour {
+            padding: 15px 0;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  & .advancedTopicContainer,
+  & .intermediateTopicContainer,
+  & .fundamentalTopicContainer {
+    width: 27%;
+    background: var(--white-color);
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--card-box-shadow);
+
+    & .topicTitle {
+      display: flex;
+      padding: 10px;
+      h2 {
+        color: var(--primary-color);
+        padding: 0 10px 0 13px;
+        font-size: 1.2rem;
+      }
+    }
+
+    & .advancedHeaders,
+    & .intermediateHeaders,
+    & .fundamentalHeaders {
+      position: relative;
+      padding: 10px;
+      & .advancedHeaderFour,
+      & .intermediateHeaderFour,
+      & .fundamentalHeaderFour {
+        color: var(--primary-color);
+        padding: 10px 10px 15px 13px;
+        font-weight: normal;
+
+        &::after {
+          content: "";
+          position: relative;
+          display: block;
+          width: auto;
+          height: 2px;
+          padding: 2px;
+          border-bottom: 2px solid var(--hr-color);
+        }
+      }
+
+      & .advancedSolved,
+      & .intermediateSolved,
+      & .fundamentalSolved {
+        position: absolute;
+        color: var(--description-color);
+        font-weight: 600;
+        right: 50px;
+        margin-top: -40px;
+      }
+
+      &::before {
+        content: "";
+        position: relative;
+        display: block;
+        width: 90%;
+        bottom: 10px;
+        left: 10px;
+        padding: 2px;
+        border-bottom: 2px solid var(--hr-color);
+      }
+    }
+  }
+
+  & .intermediateTopicContainer {
+    position: relative;
+    left: 10px;
+  }
+
+  & .fundamentalTopicContainer {
+    position: relative;
+    left: 20px;
   }
 }
 
 $layout-breakpoint-max-width: 1080px;
+$sm-layout-breakpoint-max-width: 667px;
+$xsm-layout-breakpoint-max-width: 487px;
+$mobile-below-350-breakpoint-max-width: 350px;
 $layout-breakpoint-min-width: 998px;
-$xsm-layout-breakpoint-max-width: 667px;
 @media (max-width: $layout-breakpoint-max-width) {
   .heroSection {
     flex-direction: column;
     margin-top: 22vh;
     &::before,
     &::after {
-      top: 35rem;
+      top: 41rem;
     }
 
     .header {
@@ -252,13 +519,6 @@ $xsm-layout-breakpoint-max-width: 667px;
   }
 
   .cardContainer {
-    position: absolute;
-    top: 50%;
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    left: 0;
-
     & .card {
       & h2 {
         color: var(--white-color);
@@ -284,11 +544,161 @@ $xsm-layout-breakpoint-max-width: 667px;
 
   .dailysSolvedSection {
     & .heading {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     & .cardContainer {
       top: 40%;
+    }
+  }
+
+  .statsSection {
+    & .header {
+      display: flex;
+      flex-direction: column;
+      & .heading {
+        font-size: 2.5rem;
+      }
+      h4 {
+        font-size: 1.1rem;
+      }
+    }
+
+    & .cardContainer {
+      flex-direction: column;
+      position: relative;
+      font-size: 1rem;
+      width: 100%;
+      align-items: center;
+
+      & .langCardContainer {
+        position: relative;
+        top: 150px;
+        width: 387px;
+        margin: 23px 1%;
+      }
+
+      & .allProblemsContainer {
+        margin: 10px;
+        position: relative;
+        top: 150px;
+        width: 387px;
+
+        & .problemsHeading {
+          padding: 22px 20px !important;
+
+          & .difficultyHeaderFour {
+            &::after {
+              content: "";
+              position: absolute;
+              display: block;
+              width: 370px !important;
+              height: 2px;
+              left: -24px !important;
+              border-bottom: 2px solid var(--hr-color);
+            }
+          }
+        }
+        & .countHeader {
+          position: relative;
+
+          & .countHeading {
+            left: 158px;
+          }
+        }
+      }
+
+      & .topicCardContainer {
+        margin: 10px;
+        position: relative;
+        top: 200px;
+        width: 550px;
+      }
+    }
+
+    & .advancedTopicContainer {
+      & .topicTitle {
+        h2:nth-child(2) {
+          position: relative;
+          left: 26px;
+        }
+      }
+    }
+
+    & .advancedTopicContainer,
+    & .intermediateTopicContainer,
+    & .fundamentalTopicContainer {
+      position: relative;
+      width: 374px;
+      top: 168px;
+      left: 0;
+      margin: 10px;
+
+      & .advancedSolved,
+      & .intermediateSolved,
+      & .fundamentalSolved {
+        position: absolute;
+        color: var(--description-color);
+        font-weight: 600;
+        right: 30% !important;
+        margin-top: -54px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $xsm-layout-breakpoint-max-width) {
+  .statsSection {
+    & .header {
+      display: flex;
+      flex-direction: column;
+      & .heading {
+        font-size: 1.7rem;
+      }
+      h4 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+@media (max-width: $mobile-below-350-breakpoint-max-width) {
+  .statsSection {
+    & .header {
+      display: flex;
+      flex-direction: column;
+      & .heading {
+        font-size: 2.5rem;
+      }
+      h4 {
+        font-size: 1.1rem;
+      }
+    }
+
+    & .cardContainer {
+      flex-direction: column;
+      position: relative;
+      font-size: 1rem;
+      width: 100%;
+      align-items: center;
+
+      & .langCardContainer {
+        position: relative;
+        top: 150px;
+        width: 374px;
+        margin: 23px 1%;
+      }
+
+      & .allProblemsContainer {
+        width: 374px;
+        & .problemsHeading {
+          & .difficultyHeaderFour {
+            &::after {
+              width: 350px !important;
+              left: -15px !important;
+            }
+          }
+        }
+      }
     }
   }
 }
