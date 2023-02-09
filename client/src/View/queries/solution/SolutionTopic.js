@@ -1,25 +1,16 @@
-import { useState, useEffect } from "react";
-import { postEndpoint } from "../../../Controller/endpoint";
-export const SolutionTopic = () => {
-  const [username, _] = useState("warframeleeter");
-  const [data, setData] = useState("");
-  useEffect(() => {
-    const data = { username };
-    postEndpoint("solutionTopic", data).then((items) =>
-      setData(items.data.userSolutionTopics.edges)
-    );
-  }, [username]);
-  return { data };
-};
+import { POSTQueries } from "../../../View/queries/QueriesTemplate";
 
 export const showThreeRecentSolution = () => {
-  const { data } = SolutionTopic();
-  const threeRecentSolutions = data && data.map((item) => item).slice(0, 3);
+  const { data } = POSTQueries("solutionTopic", "warframeleeter");
+
+  const threeRecentSolutions =
+    data.userSolutionTopics &&
+    data.userSolutionTopics.edges.map((item) => item).slice(0, 3);
 
   return { threeRecentSolutions };
 };
 
-export const threeRecentSolutionData = (checkTitle) => {
+export const threeRecentSolutionData = () => {
   const { threeRecentSolutions } = showThreeRecentSolution();
   const solutionsData =
     threeRecentSolutions &&
