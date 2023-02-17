@@ -29,7 +29,9 @@ export default function DailysSolved() {
                     >
                       <h2>{item.matches.node.questionTitle}</h2>
                       <p>{item.date}</p>
-                      <ul className={cardStyles.lists}>
+                      <ul
+                        className={`${cardStyles.lists} ${dailysStyles.lists}`}
+                      >
                         <li>
                           <a
                             href={lcWebURL(item.link)}

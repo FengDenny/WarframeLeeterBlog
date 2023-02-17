@@ -28,7 +28,7 @@ export default function Solution() {
               >
                 <h2 className={cardStyles.heading}>{questionTitle}</h2>
               </div>
-              <ul className={cardStyles.lists}>
+              <ul className={`${cardStyles.lists} ${cardStyles.solutionLists}`}>
                 <li>
                   <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
                     {title}

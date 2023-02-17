@@ -149,6 +149,11 @@
     width: 100%;
     left: 0;
 
+    & .lists {
+      position: relative;
+      bottom: 0 !important;
+    }
+
     & .card {
       & h2 {
         color: var(--white-color);
