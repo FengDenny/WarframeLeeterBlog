@@ -34,6 +34,35 @@ query  {
 };
 
 exports.GET_USER_PROFILE_CALENDAR = (req, res, next) => {
+  const { username } = req.body;
+  const usersQuery = `
+query userProfileCalendar(, $year:Int) {
+  matchedUser(username:"${username}") {
+    userCalendar(year:$year) {
+      activeYears
+      streak
+      totalActiveDays
+      dccBadges {
+        timestamp
+        badge {
+          name
+          icon
+        }
+      }
+      submissionCalendar
+    }
+  }
+}      
+`;
+  try {
+    leetcode_endpoint(usersQuery).then((response) => {
+      return res.send(JSON.stringify(response.data));
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+exports.GET_USER_PROFILE_CALENDAR_BY_YEAR = (req, res, next) => {
   const { username, year } = req.body;
   const usersQuery = `
 query {
