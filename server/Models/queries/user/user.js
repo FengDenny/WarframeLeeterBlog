@@ -34,12 +34,12 @@ query  {
 };
 
 exports.GET_USER_PROFILE_CALENDAR = (req, res, next) => {
-  const { username } = req.body;
+  const { username, year } = req.body;
   const usersQuery = `
-query userProfileCalendar(, $year: Int) {
-  matchedUser(username:  "${username}") {
-    userCalendar(year: $year) {
-      activeYears
+query {
+  matchedUser(username:"${username}") {
+    userCalendar(year:${year}) {
+      year
       streak
       totalActiveDays
       dccBadges {
