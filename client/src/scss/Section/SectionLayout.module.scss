@@ -473,6 +473,119 @@
     position: relative;
     right: 10px;
   }
+
+  & .timeline {
+    & .badgesEarned {
+      color: var(--primary-color);
+      padding-top: 10px;
+      font-size: 1rem;
+      & img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      span {
+        svg {
+          padding-left: 2px;
+
+          font-size: 1.2rem;
+          color: var(--dark-cyan-color) !important;
+        }
+      }
+    }
+
+    p {
+      color: var(--description-color);
+      padding-top: 10px;
+      span {
+        padding-left: 3px;
+        svg {
+          position: relative;
+          top: 2px;
+          color: var(--bright-red-color);
+        }
+        color: var(--primary-color);
+      }
+    }
+
+    time {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    & ul {
+      padding: 50px 0;
+
+      & li {
+        list-style-type: none;
+        position: relative;
+        width: 6px;
+        margin: 0 auto;
+        padding-top: 50px;
+        background: var(--white-color);
+
+        &:nth-child(odd) div {
+          left: 45px;
+          height: auto;
+          padding: 30px;
+
+          &::before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent var(--white-color) transparent transparent;
+          }
+        }
+
+        &:nth-child(even) div {
+          left: -439px;
+          height: auto;
+          padding: 30px;
+
+          &::before {
+            right: -15px;
+            border-width: 8px 0 8px 16px;
+            border-color: transparent transparent transparent var(--white-color);
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: inherit;
+          z-index: 1;
+        }
+
+        & div {
+          position: relative;
+          bottom: 0;
+          width: 400px;
+          padding: 15px;
+          background: var(--white-color);
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+          }
+        }
+      }
+    }
+  }
 }
 
 $layout-breakpoint-max-width: 1080px;
