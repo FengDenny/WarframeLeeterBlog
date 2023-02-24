@@ -10,6 +10,20 @@ export const POSTQueries = (endpoint, user) => {
   return { data };
 };
 
+export const POSTQueriesByYear = (endpoint, user, activeYear) => {
+  const [username] = useState(user);
+  const [year] = useState(activeYear);
+  const [yearlyData, setYearlyData] = useState("");
+  useEffect(() => {
+    const data = { username, year };
+
+    postEndpoint(endpoint, data)
+      .then((items) => setYearlyData(items.data))
+      .catch((err) => console.log(err));
+  }, [username, year, endpoint]);
+  return { yearlyData };
+};
+
 export const GETQueries = (endpoint, user) => {
   const [username, _] = useState(user);
   const [data, setData] = useState("");
