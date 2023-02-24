@@ -183,9 +183,8 @@
   align-items: center;
   color: var(--white-color);
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  top: 690px;
+  margin-top: 90vh;
+  top: 140px;
 
   & .header {
     display: flex;
@@ -458,6 +457,21 @@
   & .fundamentalTopicContainer {
     position: relative;
     left: 20px;
+  }
+}
+
+.profileSection {
+  position: relative;
+  align-items: center;
+  color: var(--white-color);
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  margin-top: 350px;
+
+  & .description {
+    position: relative;
+    right: 10px;
   }
 }
 
