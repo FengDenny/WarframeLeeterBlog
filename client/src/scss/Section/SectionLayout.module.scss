@@ -586,6 +586,36 @@
       }
     }
   }
+
+  /* TIMELINE EFFECTS  */
+
+  .timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+  }
+
+  .timeline ul li.inView::after {
+    background: #f45b69;
+  }
+
+  .timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+  }
+
+  .timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  .timeline ul li.inView div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 $layout-breakpoint-max-width: 1080px;
@@ -783,8 +813,8 @@ $layout-breakpoint-min-width: 998px;
       width: 250px;
     }
     .timeline ul li:nth-child(even) div {
-      left: -289px;
       /*250+45-6*/
+      left: -289px;
     }
   }
 }
