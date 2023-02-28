@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import SolutionLayout from "../../components/layouts/section/SectionLayout";
 
 import profileStyles from "../../scss/Section/SectionLayout.module.scss";
@@ -8,9 +8,17 @@ import { FaFire, FaRegSadCry } from "react-icons/fa";
 
 import { lcWebURL } from "../../Controller/endpoint";
 
+import { AnimateOnScroll } from "../../components/animations/AnimateOnScroll";
+
 export default function Profile() {
   const YearlyEndpoints = yearEndpoints();
-  console.log(YearlyEndpoints);
+
+  const ref = useRef(null);
+
+  const items = ref.current && ref.current.querySelectorAll("li");
+
+  AnimateOnScroll(items, profileStyles.inView);
+
   return (
     <SolutionLayout
       style={profileStyles.profileSection}
@@ -19,21 +27,20 @@ export default function Profile() {
         "My never ending journey to succeed in data structure and algorithm world"
       }
     >
-      <div className={profileStyles.timeline}>
+      <div className={profileStyles.timeline} ref={ref}>
         <ul>
           {YearlyEndpoints &&
-            YearlyEndpoints.map((items, index) => {
+            YearlyEndpoints.map((items, i) => {
               const { year, streak, totalActiveDays, dccBadges } =
                 items.yearlyData && items.yearlyData.matchedUser.userCalendar;
 
               return (
-                <li key={index}>
+                <li key={i}>
                   <div>
                     <time>{year}</time>
                     <p>
                       Yearly streak:
                       <span>
-                        {" "}
                         <FaFire />
                         {streak}
                       </span>
@@ -52,8 +59,8 @@ export default function Profile() {
                       </p>
                     ) : (
                       dccBadges &&
-                      dccBadges.map((items) => (
-                        <p className={profileStyles.badgesEarned}>
+                      dccBadges.map((items, index) => (
+                        <p className={profileStyles.badgesEarned} key={index}>
                           {items.badge.name} badge earned
                           <img
                             src={lcWebURL(items.badge.icon)}
