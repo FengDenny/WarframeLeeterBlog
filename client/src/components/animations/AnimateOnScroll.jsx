@@ -29,10 +29,13 @@ export const AnimateOnScroll = (items, style) => {
 export const AnimateOnScrollObserver = ({ setVisible, children }) => {
   const ref = useRef();
   useLayoutEffect(() => {
+    let options = {
+      threshold: 1.0,
+    };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       setVisible(entry.isIntersecting);
-    });
+    }, options);
     observer.observe(ref.current);
   }, [setVisible]);
 
