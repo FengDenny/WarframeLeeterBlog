@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 
 const isElementInViewport = (items) => {
   let rect = items.getBoundingClientRect();
@@ -24,4 +24,17 @@ export const AnimateOnScroll = (items, style) => {
     }
     window.addEventListener("scroll", callbackFunc);
   }, [items, style]);
+};
+
+export const AnimateOnScrollObserver = ({ setVisible, children }) => {
+  const ref = useRef();
+  useLayoutEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setVisible(entry.isIntersecting);
+    });
+    observer.observe(ref.current);
+  }, [setVisible]);
+
+  return <div ref={ref}>{children}</div>;
 };
