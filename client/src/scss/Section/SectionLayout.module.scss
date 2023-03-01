@@ -479,21 +479,25 @@
       color: var(--primary-color);
       padding-top: 10px;
       font-size: 1rem;
-      & img {
-        width: 30px;
-        height: 30px;
-        position: relative;
-        top: 10px;
-        left: 10px;
-      }
-
       span {
         svg {
           padding-left: 2px;
-
           font-size: 1.2rem;
           color: var(--dark-cyan-color) !important;
         }
+      }
+    }
+
+    & .spanBadge {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      & .badges {
+        position: relative;
+        width: 57px;
+        height: 57px;
+        top: 10px;
+        left: 10px;
       }
     }
 
