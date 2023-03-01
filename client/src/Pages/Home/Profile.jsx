@@ -4,7 +4,7 @@ import SolutionLayout from "../../components/layouts/section/SectionLayout";
 import profileStyles from "../../scss/Section/SectionLayout.module.scss";
 
 import { yearEndpoints } from "../../View/queries/profile/userProfile";
-import { FaFire, FaRegSadCry } from "react-icons/fa";
+import { FaFire, FaRegSadCry, FaSpinner } from "react-icons/fa";
 
 import { lcWebURL } from "../../Controller/endpoint";
 
@@ -12,15 +12,6 @@ import { AnimateOnScrollObserver } from "../../components/animations/AnimateOnSc
 
 export default function Profile() {
   const YearlyEndpoints = yearEndpoints();
-  const [visible, setVisible] = useState();
-
-  // console.log(YearlyEndpoints);
-
-  // const ref = useRef(null);
-
-  // const items = ref.current && ref.current.querySelectorAll("li");
-
-  // AnimateOnScroll(items, profileStyles.inView);
 
   return (
     <SolutionLayout
