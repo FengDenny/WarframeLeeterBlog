@@ -14,6 +14,8 @@ export default function Profile() {
   const YearlyEndpoints = yearEndpoints();
   const [visible, setVisible] = useState();
 
+  // console.log(YearlyEndpoints);
+
   // const ref = useRef(null);
 
   // const items = ref.current && ref.current.querySelectorAll("li");
@@ -60,16 +62,22 @@ export default function Profile() {
                           </span>
                         </p>
                       ) : (
-                        dccBadges &&
-                        dccBadges.map((items, index) => (
-                          <p className={profileStyles.badgesEarned} key={index}>
-                            {items.badge.name} badge earned
-                            <img
-                              src={lcWebURL(items.badge.icon)}
-                              alt={items.name}
-                            />
+                        <>
+                          <p className={profileStyles.badgesEarned}>
+                            badge earned
                           </p>
-                        ))
+                          <span className={profileStyles.spanBadge}>
+                            {dccBadges &&
+                              dccBadges.map((items, index) => (
+                                <img
+                                  key={index}
+                                  className={profileStyles.badges}
+                                  src={lcWebURL(items.badge.icon)}
+                                  alt={items.name}
+                                />
+                              ))}
+                          </span>
+                        </>
                       )}
                     </div>
                   </li>
