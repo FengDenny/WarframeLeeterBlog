@@ -1,4 +1,4 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef, useLayoutEffect, useState } from "react";
 
 const isElementInViewport = (items) => {
   let rect = items.getBoundingClientRect();
@@ -26,18 +26,31 @@ export const AnimateOnScroll = (items, style) => {
   }, [items, style]);
 };
 
-export const AnimateOnScrollObserver = ({ setVisible, children }) => {
+export const AnimateOnScrollObserver = ({ style, children }) => {
+  const [visible, setVisible] = useState();
   const ref = useRef();
+
+  const thresholdArray = () => {
+    const threshold = [];
+    for (let i = 0; i <= 1; i += 0.01) threshold.push(i);
+    return threshold;
+  };
+
   useLayoutEffect(() => {
-    let options = {
-      threshold: 1.0,
-    };
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setVisible(entry.isIntersecting);
-    }, options);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: thresholdArray() }
+    );
     observer.observe(ref.current);
   }, [setVisible]);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <li ref={ref} className={visible ? style : null}>
+      {children}
+    </li>
+  );
 };

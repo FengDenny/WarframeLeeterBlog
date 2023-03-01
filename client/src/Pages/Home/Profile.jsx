@@ -30,62 +30,60 @@ export default function Profile() {
         "My never ending journey to succeed in data structure and algorithm world"
       }
     >
-      <AnimateOnScrollObserver setVisible={setVisible}>
-        <div className={profileStyles.timeline}>
-          <ul>
-            {YearlyEndpoints &&
-              YearlyEndpoints.map((items, i) => {
-                const { year, streak, totalActiveDays, dccBadges } =
-                  items.yearlyData && items.yearlyData.matchedUser.userCalendar;
+      <div className={profileStyles.timeline}>
+        <ul>
+          {YearlyEndpoints &&
+            YearlyEndpoints.map((items, i) => {
+              const { year, streak, totalActiveDays, dccBadges } =
+                items.yearlyData && items.yearlyData.matchedUser.userCalendar;
 
-                return (
-                  <li key={i} className={visible ? profileStyles.inView : null}>
-                    <div>
-                      <time>{year}</time>
-                      <p>
-                        Yearly streak:
+              return (
+                <AnimateOnScrollObserver style={profileStyles.inView} key={i}>
+                  <div>
+                    <time>{year}</time>
+                    <p>
+                      Yearly streak:
+                      <span>
+                        <FaFire />
+                        {streak}
+                      </span>
+                    </p>
+                    <p>
+                      Total active days:
+                      <span>{totalActiveDays}</span>
+                    </p>
+
+                    {dccBadges && dccBadges.length === 0 ? (
+                      <p className={profileStyles.badgesEarned}>
+                        No badge earned
                         <span>
-                          <FaFire />
-                          {streak}
+                          <FaRegSadCry />
                         </span>
                       </p>
-                      <p>
-                        Total active days:
-                        <span>{totalActiveDays}</span>
-                      </p>
-
-                      {dccBadges && dccBadges.length === 0 ? (
+                    ) : (
+                      <>
                         <p className={profileStyles.badgesEarned}>
-                          No badge earned
-                          <span>
-                            <FaRegSadCry />
-                          </span>
+                          badge earned
                         </p>
-                      ) : (
-                        <>
-                          <p className={profileStyles.badgesEarned}>
-                            badge earned
-                          </p>
-                          <span className={profileStyles.spanBadge}>
-                            {dccBadges &&
-                              dccBadges.map((items, index) => (
-                                <img
-                                  key={index}
-                                  className={profileStyles.badges}
-                                  src={lcWebURL(items.badge.icon)}
-                                  alt={items.name}
-                                />
-                              ))}
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-      </AnimateOnScrollObserver>
+                        <span className={profileStyles.spanBadge}>
+                          {dccBadges &&
+                            dccBadges.map((items, index) => (
+                              <img
+                                key={index}
+                                className={profileStyles.badges}
+                                src={lcWebURL(items.badge.icon)}
+                                alt={items.name}
+                              />
+                            ))}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </AnimateOnScrollObserver>
+              );
+            })}
+        </ul>
+      </div>
     </SolutionLayout>
   );
 }
