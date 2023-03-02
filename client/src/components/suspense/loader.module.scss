@@ -2,6 +2,8 @@
   color: var(--dark-cyan-color);
   font-size: 4rem;
   animation: animate 2s infinite;
+  display: flex;
+  margin: 10% auto;
 }
 
 @keyframes animate {
