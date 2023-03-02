@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import HeroLayout from "../../components/layouts/section/SectionLayout";
 import layoutStyles from "../../scss/Section/SectionLayout.module.scss";
 import cardStyles from "../../scss/util/Card/Card.module.scss";
-import Card from "../../components/util/Card/Card";
 import globalStyle from "../../scss/global/global.module.scss";
 
 import { lcWebURL } from "../../Controller/endpoint";
@@ -17,7 +16,7 @@ import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTop
 
 import { GETQueries } from "../../View/queries/QueriesTemplate";
 
-import Loader from "../../components/suspense/Loader";
+import Card from "../../components/util/Card/Card";
 
 export default function Hero() {
   const { data } = GETQueries("dailyQuestion", "warframeleeter");
@@ -51,51 +50,48 @@ export default function Hero() {
       description={`Day ${day && day.toString()} of daily coding challenge`}
     >
       <Card styling={cardStyles.heroCard}>
-        <Loader>
-          <Banner
-            title={isCompleted ? `Completed` : `Not Completed`}
-            style={isCompleted ? bannerStyle.green : bannerStyle.red}
-          />
-          <div className={cardStyles.cardContainer}>
-            <div className={cardStyles.header}>
-              <h2 className={cardStyles.heading}>
-                {question &&
-                  question.frontendQuestionId + ". " + question.title}
-              </h2>
-              <p className={cardStyles.date}>{date && date}</p>
-            </div>
-            <div className={cardStyles.links}>
-              <ul className={cardStyles.lists}>
+        <Banner
+          title={isCompleted ? `Completed` : `Not Completed`}
+          style={isCompleted ? bannerStyle.green : bannerStyle.red}
+        />
+        <div className={cardStyles.cardContainer}>
+          <div className={cardStyles.header}>
+            <h2 className={cardStyles.heading}>
+              {question && question.frontendQuestionId + ". " + question.title}
+            </h2>
+            <p className={cardStyles.date}>{date && date}</p>
+          </div>
+          <div className={cardStyles.links}>
+            <ul className={cardStyles.lists}>
+              <li>
+                <a href={lcWebURL(link)} target='_blank' rel='noreferrer'>
+                  Problem
+                </a>
+              </li>
+
+              {url && (
                 <li>
-                  <a href={lcWebURL(link)} target='_blank' rel='noreferrer'>
-                    Problem
+                  <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
+                    Solution
                   </a>
                 </li>
+              )}
+            </ul>
+          </div>
 
-                {url && (
-                  <li>
-                    <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
-                      Solution
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </div>
-
-            <div className={cardStyles.tag}>
-              <div className={globalStyle.gridContainer2}>
-                <div className={cardStyles.tagContainer}>
-                  {question &&
-                    question.topicTags.map((tags) => (
-                      <div className={cardStyles.tags} key={tags.id}>
-                        <h6>{tags.name}</h6>
-                      </div>
-                    ))}
-                </div>
+          <div className={cardStyles.tag}>
+            <div className={globalStyle.gridContainer2}>
+              <div className={cardStyles.tagContainer}>
+                {question &&
+                  question.topicTags.map((tags) => (
+                    <div className={cardStyles.tags} key={tags.id}>
+                      <h6>{tags.name}</h6>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
-        </Loader>
+        </div>
       </Card>
     </HeroLayout>
   );

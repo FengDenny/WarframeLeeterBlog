@@ -8,7 +8,6 @@ import cardStyles from "../../scss/util/Card/Card.module.scss";
 import { useNavigate } from "react-router-dom";
 import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTopic";
 import { lcWebURL } from "../../Controller/endpoint";
-import Loader from "../../components/suspense/Loader";
 
 export default function Solution() {
   const navigate = useNavigate();
@@ -22,35 +21,31 @@ export default function Solution() {
         const { title, url, viewCount, questionTitle, id, voteCount } = item;
 
         return (
-          <Loader>
-            <Card styling={cardStyles.solutionCard} key={id}>
-              <div className={cardStyles.solutionCardContainer}>
-                <div
-                  className={`${cardStyles.header} ${cardStyles.solutionHeader}`}
-                >
-                  <h2 className={cardStyles.heading}>{questionTitle}</h2>
-                </div>
-                <ul
-                  className={`${cardStyles.lists} ${cardStyles.solutionLists}`}
-                >
-                  <li>
-                    <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
-                      {title}
-                    </a>
-                  </li>
-                </ul>
-
-                <div className={cardStyles.solutionCount}>
-                  <h4 className={cardStyles.voteHeading}>
-                    <span>{voteCount} </span> vote count
-                  </h4>
-                  <h4 className={cardStyles.viewHeading}>
-                    <span>{viewCount} </span> views
-                  </h4>
-                </div>
+          <Card styling={cardStyles.solutionCard} key={id}>
+            <div className={cardStyles.solutionCardContainer}>
+              <div
+                className={`${cardStyles.header} ${cardStyles.solutionHeader}`}
+              >
+                <h2 className={cardStyles.heading}>{questionTitle}</h2>
               </div>
-            </Card>
-          </Loader>
+              <ul className={`${cardStyles.lists} ${cardStyles.solutionLists}`}>
+                <li>
+                  <a href={lcWebURL(url)} target='_blank' rel='noreferrer'>
+                    {title}
+                  </a>
+                </li>
+              </ul>
+
+              <div className={cardStyles.solutionCount}>
+                <h4 className={cardStyles.voteHeading}>
+                  <span>{voteCount} </span> vote count
+                </h4>
+                <h4 className={cardStyles.viewHeading}>
+                  <span>{viewCount} </span> views
+                </h4>
+              </div>
+            </div>
+          </Card>
         );
       });
     return solution;
