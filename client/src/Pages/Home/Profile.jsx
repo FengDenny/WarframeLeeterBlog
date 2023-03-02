@@ -4,7 +4,7 @@ import SolutionLayout from "../../components/layouts/section/SectionLayout";
 import profileStyles from "../../scss/Section/SectionLayout.module.scss";
 
 import { yearEndpoints } from "../../View/queries/profile/userProfile";
-import { FaFire, FaRegSadCry, FaSpinner } from "react-icons/fa";
+import { FaFire, FaRegSadCry } from "react-icons/fa";
 
 import { lcWebURL } from "../../Controller/endpoint";
 

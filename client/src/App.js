@@ -1,4 +1,3 @@
-import globalStyles from "./scss/global/global.module.scss";
 import { Main } from "./MainRoutes";
 import Navbar from "./components/util/Navbar/Navbar.jsx";
 
