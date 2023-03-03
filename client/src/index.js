@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -7,9 +7,7 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 
-import Loader from "./components/suspense/Loader";
-
-const App = lazy(() => import("./App"));
+import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const persistor = persistStore(store);
@@ -17,9 +15,7 @@ root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <Router>
-        <Loader>
-          <App />
-        </Loader>
+        <App />
       </Router>
     </PersistGate>
   </Provider>
