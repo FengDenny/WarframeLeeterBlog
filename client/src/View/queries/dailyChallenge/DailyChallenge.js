@@ -4,7 +4,7 @@ import { postEndpoint } from "../../../Controller/endpoint";
 export const DailyQuestionRecords = () => {
   const [JSONData, _] = useState({
     year: 2023,
-    month: 2,
+    month: 3,
   });
 
   const { year, month } = JSONData;
