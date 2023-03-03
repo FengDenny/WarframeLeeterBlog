@@ -1,9 +1,12 @@
 .loadingIcon {
   color: var(--dark-cyan-color);
-  font-size: 4rem;
-  animation: animate 2s infinite;
+  font-size: 2rem;
   display: flex;
-  margin: 10% auto;
+  justify-content: center;
+  svg {
+    animation: animate 2s infinite;
+  }
+  z-index: 1000;
 }
 
 @keyframes animate {
@@ -14,3 +17,19 @@
     transform: rotate(720deg);
   }
 }
+
+.spinner {
+  font-size: 4.5rem;
+  display: flex;
+  position: fixed;
+  margin: 10% auto;
+}
+
+// $layout-breakpoint-max-width: 1080px;
+// @media (max-width: $layout-breakpoint-max-width) {
+//   .heroSpinner,
+//   .dailySpinner {
+//     display: flex;
+//     position: relative;
+//   }
+// }
