@@ -1,25 +1,30 @@
-import { DailyQuestionRecords } from "../../../View/queries/dailyChallenge/DailyChallenge";
-
-import { POSTQueries } from "../../../View/queries/QueriesTemplate";
+import {
+  postDailySolvedResource,
+  postDailyRecordsResource,
+} from "../../../View/queries/QueriesTemplate";
 
 export const solutionTopicData = () => {
-  const { data } = POSTQueries("solutionTopic", "warframeleeter");
+  const { data } = postDailySolvedResource.post.read();
+
   const solutionTopic =
-    data.userSolutionTopics &&
-    data.userSolutionTopics.edges.map((item) => item);
+    data.userSolutionTopics && data.userSolutionTopics.edges;
 
   return { solutionTopic };
 };
 
 export const recentDailyQuestionData = () => {
-  const { data } = DailyQuestionRecords();
-  const dailysQuestionRecord = data && data.map((item) => item);
+  const { data } = postDailyRecordsResource.post.read();
+
+  const dailysQuestionRecord = data && data.dailyCodingChallengeV2.challenges;
 
   return { dailysQuestionRecord };
 };
 
 export const dailysRecordMatchedByTitle = () => {
   const { dailysQuestionRecord } = recentDailyQuestionData();
+
+  console.log(dailysQuestionRecord);
+
   const { solutionTopic } = solutionTopicData();
 
   let search =
