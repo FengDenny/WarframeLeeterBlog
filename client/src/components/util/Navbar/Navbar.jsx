@@ -3,7 +3,7 @@ import navbarStyles from "../../../scss/util/Navbar/navbar.module.scss";
 
 import DesktopNavbar from "./Desktop/DesktopNavbar";
 import MobileNavbar from "./Mobile/MobileNavbar";
-import { MobileMenuToggler } from "../../../View/utils/Navbar/NavbarView";
+import { MobileMenuToggler } from "../../../Controller/utils/Navbar/NavbarView";
 export default function Navbar() {
   const { mobileMenuOpen, toggleOpen, closeMobileMenu } = MobileMenuToggler();
   return (

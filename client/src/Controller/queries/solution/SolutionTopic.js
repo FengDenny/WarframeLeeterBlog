@@ -1,17 +1,16 @@
-import { POSTQueries } from "../../../View/queries/QueriesTemplate";
+import { ShowPromisesData } from "../../../Controller/queries/QueriesTemplate";
 
-export const showThreeRecentSolution = () => {
-  const { data } = POSTQueries("solutionTopic", "warframeleeter");
+const ShowThreeRecentSolution = () => {
+  const { solutions } = ShowPromisesData();
 
   const threeRecentSolutions =
-    data.userSolutionTopics &&
-    data.userSolutionTopics.edges.map((item) => item).slice(0, 3);
+    solutions !== undefined && solutions.map((item) => item).slice(0, 3);
 
   return { threeRecentSolutions };
 };
 
 export const threeRecentSolutionData = () => {
-  const { threeRecentSolutions } = showThreeRecentSolution();
+  const { threeRecentSolutions } = ShowThreeRecentSolution();
   const solutionsData =
     threeRecentSolutions &&
     threeRecentSolutions.map((item) => {

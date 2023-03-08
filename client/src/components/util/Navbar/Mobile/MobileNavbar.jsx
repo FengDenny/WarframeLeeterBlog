@@ -5,6 +5,7 @@ import ThemeToggler from "../NavRight/ThemeToggler";
 import StreakCount from "../NavRight/StreakCount";
 import navbarStyles from "../../../../scss/util/Navbar/navbar.module.scss";
 import globalStyles from "../../../../scss/global/global.module.scss";
+import Loader from "../../../suspense/Loader";
 
 export default function MobileNavbar({ toggle, show, close }) {
   return (
@@ -21,7 +22,9 @@ export default function MobileNavbar({ toggle, show, close }) {
         className={`${navbarStyles.right} ${globalStyles.dFlexRow} ${navbarStyles.mobileNav}`}
       >
         <ThemeToggler />
-        <StreakCount />
+        <Loader>
+          <StreakCount />
+        </Loader>
       </div>
     </div>
   );

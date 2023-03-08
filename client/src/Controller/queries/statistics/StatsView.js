@@ -5,7 +5,7 @@ import {
   LanguageStats,
   ProblemSolved,
   TopicStats,
-} from "../../../View/queries/statistics/Statistics";
+} from "../../../Controller/queries/statistics/Statistics";
 import { SiJavascript } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 

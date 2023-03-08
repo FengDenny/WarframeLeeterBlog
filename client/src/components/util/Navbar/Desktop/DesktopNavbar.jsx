@@ -6,7 +6,8 @@ import NavLogo from "../NavLeft/NavLogo";
 import Searchbar from "../NavRight/Searchbar";
 import ThemeToggler from "../NavRight/ThemeToggler";
 import StreakCount from "../NavRight/StreakCount";
-
+import Loader from "../../../suspense/Loader";
+import { links } from "../../../../Model/NavLinks";
 export default function DesktopNavbar() {
   return (
     <div
@@ -14,12 +15,14 @@ export default function DesktopNavbar() {
     >
       <div className={`${navbarStyles.left} ${globalStyles.dFlexRow}`}>
         <NavLogo />
-        <NavLinks />
+        <NavLinks link={links} />
       </div>
       <div className={`${navbarStyles.right} ${globalStyles.dFlexRow}`}>
         <Searchbar />
         <ThemeToggler />
-        <StreakCount />
+        <Loader>
+          <StreakCount />
+        </Loader>
       </div>
     </div>
   );
