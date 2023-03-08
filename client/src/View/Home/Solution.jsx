@@ -6,7 +6,7 @@ import Card from "../../components/util/Card/Card";
 import cardStyles from "../../scss/util/Card/Card.module.scss";
 
 import { useNavigate } from "react-router-dom";
-import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTopic";
+import { threeRecentSolutionData } from "../../Controller/queries/solution/SolutionTopic";
 import { lcWebURL } from "../../Controller/endpoint";
 
 export default function Solution() {

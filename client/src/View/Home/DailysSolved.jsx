@@ -2,7 +2,7 @@ import React from "react";
 import SolutionLayout from "../../components/layouts/section/SectionLayout";
 import dailysStyles from "../../scss/Section/SectionLayout.module.scss";
 import globalStyle from "../../scss/global/global.module.scss";
-import { dailysRecordMatchedByTitle } from "../../View/queries/dailyChallenge/DailySolved";
+import { dailysRecordMatchedByTitle } from "../../Controller/queries/dailyChallenge/DailySolved";
 
 import { lcWebURL } from "../../Controller/endpoint";
 import Card from "../../components/util/Card/Card";

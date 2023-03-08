@@ -10,23 +10,32 @@ import Banner from "../../components/util/Banner/Banner";
 
 import bannerStyle from "../../scss/util/Banner/Banner.module.scss";
 
-import { DeDupedRecentSubmissions } from "../../View/queries/dailyChallenge/hooks/useDedupedSubmissions";
+import { useDeDupedRecentSubmissions } from "../../Controller/queries/dailyChallenge/hooks/useDedupedSubmissions";
 
-import { threeRecentSolutionData } from "../../View/queries/solution/SolutionTopic";
-
-import { GETQueries } from "../../View/queries/QueriesTemplate";
+import { threeRecentSolutionData } from "../../Controller/queries/solution/SolutionTopic";
 
 import Card from "../../components/util/Card/Card";
 
+import { GetData } from "../../Controller/queries/QueriesTemplate";
+
+import { Spinner } from "../../components/suspense/Spinner";
+import loaderStyle from "../../components/suspense/loader.module.scss";
+
 export default function Hero() {
-  const { data } = GETQueries("dailyQuestion", "warframeleeter");
+  const [data, setData] = useState();
+
+  const { items } = GetData();
+
+  useEffect(() => {
+    items && items.map((item) => setData(item));
+  }, [items]);
 
   const { date, link, question } =
-    data && data.activeDailyCodingChallengeQuestion;
+    data !== undefined && data.activeDailyCodingChallengeQuestion;
 
   const day = date && date.split("-").slice(-1);
 
-  const { deDupedValues } = DeDupedRecentSubmissions();
+  const { deDupedValues } = useDeDupedRecentSubmissions();
 
   const isCompleted = deDupedValues.includes(question && question.title);
 
@@ -37,11 +46,15 @@ export default function Hero() {
   useEffect(() => {
     solutionsData &&
       solutionsData.map((item) => {
-        return item.questionTitle.includes(question.title)
+        return item.questionTitle.includes(question && question.title)
           ? setUrl(item.url)
           : null;
       });
   }, [solutionsData]);
+
+  if (data === undefined) {
+    return <Spinner style={loaderStyle.spinner} />;
+  }
 
   return (
     <HeroLayout
@@ -52,7 +65,9 @@ export default function Hero() {
       <Card styling={cardStyles.heroCard}>
         <Banner
           title={isCompleted ? `Completed` : `Not Completed`}
-          style={isCompleted ? bannerStyle.green : bannerStyle.red}
+          style={`${isCompleted ? bannerStyle.green : bannerStyle.red} ${
+            bannerStyle.cardContainer
+          }`}
         />
         <div className={cardStyles.cardContainer}>
           <div className={cardStyles.header}>
