@@ -4,7 +4,6 @@
 
   & .heading {
     font-size: 3rem;
-    // font-size: 3.5vmax;
   }
 
   & .description,
@@ -492,13 +491,33 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+
       & .badges {
         position: relative;
         width: 57px;
         height: 57px;
         top: 10px;
         left: 10px;
+        animation: spin 1s ease-in-out;
       }
+    }
+
+    & .notVisible {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & img {
+        position: relative;
+        width: 57px;
+        height: 57px;
+        top: 10px;
+        left: 10px;
+      }
+    }
+
+    & .visibility {
+      animation: spin 1s ease-in-out;
     }
 
     p {
@@ -535,7 +554,7 @@
         background: var(--white-color);
 
         &:nth-child(odd) div {
-          left: 45px;
+          left: 37px;
           height: auto;
           padding: 30px;
 
@@ -608,17 +627,51 @@
   }
 
   .timeline ul li:nth-child(odd) div {
-    transform: translate3d(200px, 0, 0);
+    transform: translate3d(60px, 0, 0);
   }
 
   .timeline ul li:nth-child(even) div {
-    transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-60px, 0, 0);
   }
 
   .timeline ul li.inView div {
     transform: none;
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.bannerSection {
+  background-color: var(--white-color);
+  margin-top: 100px;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  & .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+
+    & .inView {
+      animation: spin 1s ease-in-out;
+    }
+  }
+}
+
+// Animations
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }
 
@@ -829,15 +882,25 @@ $layout-breakpoint-min-width: 998px;
       margin-left: 20px;
     }
     .timeline ul li div {
-      width: calc(100vw - 91px);
+      width: calc(75vw - 100px);
+      padding: 10px;
     }
     .timeline ul li:nth-child(even) div {
-      left: 45px;
+      left: 34px;
     }
     .timeline ul li:nth-child(even) div::before {
       left: -15px;
       border-width: 8px 16px 8px 0;
       border-color: transparent var(--white-color) transparent transparent;
+    }
+  }
+
+  .bannerSection {
+    & .icons {
+      img {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
@@ -853,6 +916,12 @@ $layout-breakpoint-min-width: 998px;
       h4 {
         font-size: 0.9rem;
       }
+    }
+  }
+
+  .profileSection {
+    .timeline ul li div {
+      width: calc(75vw - 40px);
     }
   }
 }
