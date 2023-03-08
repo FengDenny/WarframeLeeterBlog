@@ -6,14 +6,23 @@
   padding: 0;
 }
 
+html {
+  // make footer stay bottom
+  height: 100%;
+}
+
 html,
 body {
   scroll-behavior: smooth;
-  min-height: 100%;
 }
 
 body {
+  // make footer stay bottom START
   position: relative;
+  margin: 0;
+  padding-bottom: 25rem;
+  min-height: 100%;
+  // make footer stay bottom End
   background: var(--primary-color);
   font-family: var(--primary-font);
   color: var(--white-color);
@@ -32,7 +41,6 @@ li {
 }
 
 // Active class
-
 .active {
   &::after {
     display: block;
