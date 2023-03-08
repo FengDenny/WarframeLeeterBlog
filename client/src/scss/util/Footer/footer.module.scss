@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5vh;
+  padding: 40px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  & span {
+    padding-top: 10px;
+  }
+
+  ul {
+    width: 239px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & li {
+      padding: 10px 0;
+    }
+  }
+
+  & img {
+    width: 150px;
+    height: 150px;
+  }
+}
