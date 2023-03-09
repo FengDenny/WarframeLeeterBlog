@@ -1063,6 +1063,17 @@ $layout-breakpoint-min-width: 998px;
       width: calc(75vw - 40px);
     }
   }
+
+  .achievementsContainer {
+    & .contentBtn {
+      justify-content: center !important;
+    }
+
+    & .contentItem {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
 }
 @media (max-width: $mobile-below-350-breakpoint-max-width) {
   .statsSection {
