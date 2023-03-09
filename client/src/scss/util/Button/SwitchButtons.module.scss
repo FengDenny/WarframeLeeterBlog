@@ -1,0 +1,26 @@
+.switchBtns {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+
+  background: transparent;
+
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: vaR(--card-box-shadow);
+
+  color: var(--primary-color);
+
+  & :hover {
+    color: var(--bright-red-color);
+  }
+
+  svg {
+    font-size: 1.5rem;
+  }
+
+  &.active {
+    color: var(--bright-red-color);
+    transition: all 300ms ease-in-out;
+  }
+}

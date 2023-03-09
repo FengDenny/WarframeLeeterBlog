@@ -50,6 +50,25 @@ li {
   }
 }
 
+.displayFlexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.switchFlexStyling {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+}
+
+.switchGridStyling {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
 // FONT
 .primaryFont {
   font-family: var(--primary-font);
