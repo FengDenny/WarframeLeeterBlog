@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function ActiveNavLink() {
+export default function Active() {
   const [active, setActive] = useState(1);
 
   const handleActiveClicked = (id) => {
