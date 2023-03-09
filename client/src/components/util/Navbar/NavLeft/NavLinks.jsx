@@ -4,7 +4,7 @@ import globalStyles from "../../../../scss/global/global.module.scss";
 import { Link } from "react-router-dom";
 import mobileStyles from "../../../../scss/util/Navbar/mobileNavbar.module.scss";
 
-import ActiveNavLink from "../../../../Controller/utils/Navbar/ActiveNavLink";
+import ActiveNavLink from "../../../../Controller/utils/Active";
 
 export default function NavLinks({ mobile, link, footer }) {
   const { active, handleActiveClicked } = ActiveNavLink();
