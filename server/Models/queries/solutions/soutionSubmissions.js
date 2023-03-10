@@ -1,7 +1,8 @@
 const { leetcode_endpoint } = require("../../../endpoint/endpoints");
 
 exports.GET_USER_SOLUTION_TOPIC = (req, res, next) => {
-  const { username } = req.body;
+  const { username, quantity } = req.body;
+  console.log(quantity);
 
   const solutionQuery = `
   query {
@@ -9,7 +10,7 @@ exports.GET_USER_SOLUTION_TOPIC = (req, res, next) => {
         username: "${username}"
         orderBy: newest_to_oldest
         skip: 0
-        first: 50
+        first: ${quantity}
       ) {
         pageInfo {
           hasNextPage
