@@ -703,7 +703,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 80vw 30vh 0;
-      border-color: transparent transparent white transparent;
+      border-color: transparent transparent var(--white-color) transparent;
     }
 
     &::after {
@@ -715,7 +715,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 0 30vh 80vw;
-      border-color: transparent transparent white transparent;
+      border-color: transparent transparent var(--white-color) transparent;
     }
   }
   & .content {
@@ -1066,11 +1066,11 @@ $layout-breakpoint-min-width: 998px;
 
   .achievementsContainer {
     & .contentBtn {
-      justify-content: center !important;
+      display: none !important;
     }
 
     & .contentItem {
-      width: 300px;
+      width: 250px;
       margin: 0 auto;
     }
   }
