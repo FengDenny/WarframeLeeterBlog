@@ -119,7 +119,7 @@ export default function Search() {
 
                 return (
                   <Card
-                    className={`${solutionStyles.solutionsContainer} ${globalStyle.container}`}
+                    styling={`${solutionStyles.solutionsContainer} ${globalStyle.container}`}
                     key={id}
                   >
                     <div className={solutionStyles.details}>
