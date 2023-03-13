@@ -10,9 +10,11 @@ import thunk from "redux-thunk";
 // Slicers
 
 import { ThemeTogglerSlice } from "../slice/ThemeTogglerSlice";
+import { SearchTitleSlice } from "../slice/SearchTitleSlice";
 
 const reducer = combineReducers({
   themeData: ThemeTogglerSlice.reducer,
+  SearchTitleData: SearchTitleSlice.reducer,
 });
 
 const persistConfig = {
