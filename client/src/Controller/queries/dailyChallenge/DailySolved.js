@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { PostByDateData } from "../../../Controller/queries/QueriesTemplate";
 
-import { ShowPromisesData } from "../../../Controller/queries/QueriesTemplate";
+import { PostQuantityData } from "../../../Controller/queries/QueriesTemplate";
 
 export const RecentDailyQuestionData = () => {
   const [dataItem, setDataItem] = useState();
@@ -22,7 +22,7 @@ export const RecentDailyQuestionData = () => {
 export const dailysRecordMatchedByTitle = () => {
   const { dailysQuestionRecord } = RecentDailyQuestionData();
 
-  const { solutions } = ShowPromisesData();
+  const { solutions } = PostQuantityData();
 
   let search =
     dailysQuestionRecord &&

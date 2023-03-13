@@ -1,7 +1,7 @@
-import { ShowPromisesData } from "../../../Controller/queries/QueriesTemplate";
+import { PostQuantityData } from "../../../Controller/queries/QueriesTemplate";
 
 const ShowThreeRecentSolution = () => {
-  const { solutions } = ShowPromisesData();
+  const { solutions } = PostQuantityData();
 
   const threeRecentSolutions =
     solutions !== undefined && solutions.map((item) => item).slice(0, 3);
