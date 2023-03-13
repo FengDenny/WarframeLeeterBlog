@@ -3,7 +3,6 @@ import { postEndpoint, getEndpoint } from "../../Controller/endpoint";
 
 const PostPromise = async () => {
   const endpoints = [
-    "solutionTopic",
     "problemSolvedRating",
     "languageStats",
     "skillStats",
@@ -22,7 +21,6 @@ const PostPromise = async () => {
     })
   ).then(
     ([
-      solutionTopic,
       problemSolvedRating,
       languageStats,
       skillStats,
@@ -31,7 +29,6 @@ const PostPromise = async () => {
       calendar,
     ]) => [
       {
-        solutionTopic,
         problemSolvedRating,
         languageStats,
         skillStats,
@@ -41,6 +38,39 @@ const PostPromise = async () => {
       },
     ]
   );
+};
+
+const PostByTitleSlug = async (endpoint, titleSlug) => {
+  const response = await postEndpoint(endpoint, {
+    titleSlug,
+  });
+
+  return response.data;
+};
+
+export const PostTitleSlugData = (titleSlug) => {
+  const detail = PostByTitleSlug("dailyQuestionDetails", titleSlug);
+  return { detail };
+};
+
+const PostPromiseByQuantity = async (endpoint, quantity) => {
+  const response = await postEndpoint(endpoint, {
+    username: "warframeleeter",
+    quantity,
+  });
+
+  return response.data;
+};
+
+export const PostQuantityData = () => {
+  const [solutions, setSolutions] = useState();
+
+  useEffect(() => {
+    PostPromiseByQuantity("solutionTopic", 150).then((items) => {
+      setSolutions(items.userSolutionTopics.edges);
+    });
+  }, []);
+  return { solutions };
 };
 
 export const PostData = () => {
@@ -138,7 +168,6 @@ export const GetData = () => {
 
 export const ShowPromisesData = () => {
   const [language, setLanguage] = useState();
-  const [solutions, setSoutions] = useState();
   const [solvedRating, setSolvedRating] = useState();
   const [skillsRating, setSkillRating] = useState();
   const [recentSolution, setRecentSolution] = useState();
@@ -152,7 +181,6 @@ export const ShowPromisesData = () => {
       data.map((items) => {
         return [
           setLanguage(items.languageStats),
-          setSoutions(items.solutionTopic.userSolutionTopics.edges),
           setSolvedRating(items.problemSolvedRating),
           setSkillRating(items.skillStats),
           setRecentSolution(items.recentSolutions),
@@ -164,7 +192,6 @@ export const ShowPromisesData = () => {
 
   return {
     language,
-    solutions,
     solvedRating,
     skillsRating,
     recentSolution,
