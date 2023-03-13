@@ -6,7 +6,7 @@ import {
   AllProblemsSolved,
   languageStats,
   topicStats,
-} from "../../Controller/queries/statistics/StatsView";
+} from "../Statistics/StatsView";
 
 export default function Statistics() {
   return (
