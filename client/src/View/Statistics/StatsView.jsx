@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import statsStyles from "../../../scss/Section/SectionLayout.module.scss";
-import Card from "../../../components/util/Card/Card";
+import statsStyles from "../../scss/Section/SectionLayout.module.scss";
+import Card from "../../components/util/Card/Card";
 import {
   LanguageStats,
   ProblemSolved,
   TopicStats,
-} from "../../../Controller/queries/statistics/Statistics";
+} from "../../Controller/queries/statistics/Statistics";
 import { SiJavascript } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 
