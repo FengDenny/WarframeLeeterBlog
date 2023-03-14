@@ -26,8 +26,6 @@ import ActiveBtn from "../../Controller/utils/Active";
 export default function Search() {
   const { active, handleActiveClicked } = ActiveBtn();
 
-  console.log(active);
-
   const { advanced, fundamental, intermediate } = SkillTags();
 
   const { solution, qDetails } = MergeSolutionJSON();
@@ -140,13 +138,7 @@ export default function Search() {
                   const { voteCount } = post;
 
                   return (
-                    <div
-                      className={`${
-                        active === 1
-                          ? globalStyle.gridWidth
-                          : globalStyle.flexWidth
-                      }`}
-                    >
+                    <div>
                       <Card
                         styling={`${solutionStyles.solutionsContainer} ${globalStyle.container} `}
                         key={id}
