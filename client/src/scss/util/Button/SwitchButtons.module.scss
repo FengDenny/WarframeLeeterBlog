@@ -25,15 +25,21 @@
   }
 }
 
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .solutionSwitchBtnContainer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-self: flex-end;
+  width: 100px;
 
   button {
     border: 1px solid var(--white-color);
-    box-shadow: vaR(--card-box-shadow);
+    box-shadow: vaR(--btn-box-shadow);
     color: var(--white-color);
   }
 }

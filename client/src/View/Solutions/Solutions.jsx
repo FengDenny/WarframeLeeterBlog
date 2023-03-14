@@ -52,10 +52,10 @@ export default function Search() {
           </div>
         </div>
       </div>
-      <div className={globalStyle.container}>
-        <div
-          className={`${switchBtnStyles.solutionSwitchBtnContainer} ${switchBtnStyles.switchBtns}`}
-        >
+      <div
+        className={`${globalStyle.container} ${switchBtnStyles.btnContainer}`}
+      >
+        <div className={switchBtnStyles.solutionSwitchBtnContainer}>
           <SwitchButton
             active={active}
             handleActiveClicked={handleActiveClicked}
