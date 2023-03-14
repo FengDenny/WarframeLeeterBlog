@@ -24,3 +24,33 @@
     transition: all 300ms ease-in-out;
   }
 }
+
+.solutionSwitchBtnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: flex-end;
+
+  button {
+    border: 1px solid var(--white-color);
+    box-shadow: vaR(--card-box-shadow);
+    color: var(--white-color);
+  }
+}
+
+$layout-997-max-width: 997px;
+$layout-797-min-wdith: 797px;
+
+$layout-breakpoint-max-width: 667px;
+
+@media only screen and (max-width: $layout-997-max-width) and (min-width: $layout-797-min-wdith) {
+  .solutionSwitchBtnContainer {
+    display: none !important;
+  }
+}
+
+@media (max-width: $layout-breakpoint-max-width) {
+  .solutionSwitchBtnContainer {
+    display: none !important;
+  }
+}

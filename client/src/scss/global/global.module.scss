@@ -69,6 +69,21 @@ li {
   transition: all 0.5s ease-in-out;
 }
 
+.switchGridStyling300 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.flexWidth {
+  width: 500px;
+}
+
+.gridWidth {
+  width: 0 !important;
+}
+
 // FONT
 .primaryFont {
   font-family: var(--primary-font);
