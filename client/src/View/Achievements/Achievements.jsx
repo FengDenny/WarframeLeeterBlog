@@ -23,8 +23,6 @@ export default function Achievements() {
 
   const badgesGrouped = GroupByName(badges);
 
-  console.log(upcoming);
-
   return (
     <section className={achievedStyles.achievementsContainer}>
       <div className={achievedStyles.hero}>
