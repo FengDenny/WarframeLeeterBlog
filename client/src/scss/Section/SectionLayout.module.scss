@@ -796,6 +796,7 @@
     height: 40vh;
     background: var(--white-color);
     width: 100%;
+    overflow-x: hidden;
 
     & .heroContainer {
       position: relative;
@@ -830,7 +831,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        width: calc(100% - 10px);
+        width: calc(100% - 30px);
         margin-left: 18px;
 
         & .btnContainer {
@@ -910,8 +911,7 @@
     top: 10vh;
     display: flex;
     flex-direction: column;
-    width: 700px;
-    max-width: 900px;
+    width: calc(100% - 4px);
     height: auto;
     background: var(--white-color);
     color: var(--primary-color);
@@ -924,6 +924,8 @@
       display: flex;
       flex-direction: column;
       margin-left: 5px;
+      align-items: center;
+      justify-content: center;
 
       span,
       a {
@@ -940,12 +942,16 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      align-self: center;
+      justify-content: center;
+
+      width: calc(90% - 3px);
 
       span {
         padding: 10px;
         border: 1px solid var(--primary-color);
         border-radius: 5px;
-        margin: 20px 5px;
+        margin: 8px 5px;
         height: 40px;
       }
     }
@@ -1202,7 +1208,7 @@ $layout-breakpoint-min-width: 998px;
   .solutionHero {
     & .heroDescription {
       h3 {
-        font-size: 4.9vw !important;
+        font-size: 4.3vw !important;
       }
 
       span {
